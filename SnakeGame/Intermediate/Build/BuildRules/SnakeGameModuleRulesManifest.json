@@ -1,8 +1,0 @@
-{
-	"SourceFiles": [
-		"C:\\GitRepos\\UnrealSnake\\SnakeGame\\Source\\SnakeGame\\SnakeGame.Build.cs",
-		"C:\\GitRepos\\UnrealSnake\\SnakeGame\\Source\\SnakeGame.Target.cs",
-		"C:\\GitRepos\\UnrealSnake\\SnakeGame\\Source\\SnakeGameEditor.Target.cs"
-	],
-	"EngineVersion": "5.5.4"
-}
