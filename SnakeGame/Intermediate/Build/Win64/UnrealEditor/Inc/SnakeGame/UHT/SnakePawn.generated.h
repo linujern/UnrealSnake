@@ -9,10 +9,20 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+enum class ESnakeDirection : uint8;
 #ifdef SNAKEGAME_SnakePawn_generated_h
 #error "SnakePawn.generated.h already included, missing '#pragma once' in SnakePawn.h"
 #endif
 #define SNAKEGAME_SnakePawn_generated_h
+
+#define FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePawn_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execQueueNewDirection); \
+	DECLARE_FUNCTION(execJump); \
+	DECLARE_FUNCTION(execRotateSnake); \
+	DECLARE_FUNCTION(execMoveSnake); \
+	DECLARE_FUNCTION(execUpdateMovement); \
+	DECLARE_FUNCTION(execUpdateDirection);
+
 
 #define FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePawn_h_13_INCLASS_NO_PURE_DECLS \
 private: \
@@ -35,10 +45,11 @@ public: \
 	NO_API virtual ~ASnakePawn();
 
 
-#define FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePawn_h_10_PROLOG
+#define FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePawn_h_11_PROLOG
 #define FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePawn_h_13_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
+	FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePawn_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
 	FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePawn_h_13_INCLASS_NO_PURE_DECLS \
 	FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePawn_h_13_ENHANCED_CONSTRUCTORS \
 private: \

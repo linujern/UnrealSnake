@@ -37,12 +37,15 @@
 /FUNCTIONPADMIN:6
 /NOIMPLIB
 "C:\GitRepos\UnrealSnake\SnakeGame\Intermediate\Build\Win64\x64\SnakeGameEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h.obj"
+"C:\GitRepos\UnrealSnake\SnakeGame\Intermediate\Build\Win64\x64\UnrealEditor\Development\SnakeGame\SnakeGame.init.gen.cpp.obj"
+"C:\GitRepos\UnrealSnake\SnakeGame\Intermediate\Build\Win64\x64\UnrealEditor\Development\SnakeGame\SnakePawn.gen.cpp.obj"
 "C:\GitRepos\UnrealSnake\SnakeGame\Intermediate\Build\Win64\x64\UnrealEditor\Development\SnakeGame\SnakeGame.cpp.obj"
+"C:\GitRepos\UnrealSnake\SnakeGame\Intermediate\Build\Win64\x64\UnrealEditor\Development\SnakeGame\SnakePawn.cpp.obj"
 "C:\GitRepos\UnrealSnake\SnakeGame\Intermediate\Build\Win64\x64\UnrealEditor\Development\SnakeGame\PerModuleInline.gen.cpp.obj"
 "C:\GitRepos\UnrealSnake\SnakeGame\Intermediate\Build\Win64\x64\UnrealEditor\Development\SnakeGame\Default.rc2.res"
+"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Engine\UnrealEditor-Engine.lib"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Core\UnrealEditor-Core.lib"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\CoreUObject\UnrealEditor-CoreUObject.lib"
-"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Engine\UnrealEditor-Engine.lib"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\InputCore\UnrealEditor-InputCore.lib"
 "..\Plugins\EnhancedInput\Intermediate\Build\Win64\x64\UnrealEditor\Development\EnhancedInput\UnrealEditor-EnhancedInput.lib"
 "delayimp.lib"
