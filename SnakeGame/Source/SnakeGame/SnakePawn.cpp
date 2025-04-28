@@ -98,6 +98,13 @@ void ASnakePawn::Jump() {
 	
 }
 
+void ASnakePawn::OnCollision(AActor* OtherActor) {
+	if (Cast<AApple>(OtherActor) != nullptr) {
+		OtherActor->Destroy();
+	}
+	
+}
+
 
 // Called to bind functionality to input
 void ASnakePawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) {

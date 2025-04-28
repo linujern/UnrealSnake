@@ -10,6 +10,9 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeSnakePawn() {}
 
 // Begin Cross Module References
+COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FRotator();
+COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector3d();
+ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_APawn();
 ENGINE_API UClass* Z_Construct_UClass_USceneComponent_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_USphereComponent_NoRegister();
@@ -93,6 +96,48 @@ DEFINE_FUNCTION(ASnakePawn::execMoveSnake)
 	P_NATIVE_END;
 }
 // End Class ASnakePawn Function MoveSnake
+
+// Begin Class ASnakePawn Function OnCollision
+struct Z_Construct_UFunction_ASnakePawn_OnCollision_Statics
+{
+	struct SnakePawn_eventOnCollision_Parms
+	{
+		AActor* OtherActor;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "SnakePawn.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_OtherActor;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ASnakePawn_OnCollision_Statics::NewProp_OtherActor = { "OtherActor", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(SnakePawn_eventOnCollision_Parms, OtherActor), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ASnakePawn_OnCollision_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ASnakePawn_OnCollision_Statics::NewProp_OtherActor,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ASnakePawn_OnCollision_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ASnakePawn_OnCollision_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ASnakePawn, nullptr, "OnCollision", nullptr, nullptr, Z_Construct_UFunction_ASnakePawn_OnCollision_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ASnakePawn_OnCollision_Statics::PropPointers), sizeof(Z_Construct_UFunction_ASnakePawn_OnCollision_Statics::SnakePawn_eventOnCollision_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ASnakePawn_OnCollision_Statics::Function_MetaDataParams), Z_Construct_UFunction_ASnakePawn_OnCollision_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_ASnakePawn_OnCollision_Statics::SnakePawn_eventOnCollision_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_ASnakePawn_OnCollision()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ASnakePawn_OnCollision_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(ASnakePawn::execOnCollision)
+{
+	P_GET_OBJECT(AActor,Z_Param_OtherActor);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	P_THIS->OnCollision(Z_Param_OtherActor);
+	P_NATIVE_END;
+}
+// End Class ASnakePawn Function OnCollision
 
 // Begin Class ASnakePawn Function QueueNewDirection
 struct Z_Construct_UFunction_ASnakePawn_QueueNewDirection_Statics
@@ -252,6 +297,7 @@ void ASnakePawn::StaticRegisterNativesASnakePawn()
 	static const FNameNativePtrPair Funcs[] = {
 		{ "Jump", &ASnakePawn::execJump },
 		{ "MoveSnake", &ASnakePawn::execMoveSnake },
+		{ "OnCollision", &ASnakePawn::execOnCollision },
 		{ "QueueNewDirection", &ASnakePawn::execQueueNewDirection },
 		{ "RotateSnake", &ASnakePawn::execRotateSnake },
 		{ "UpdateDirection", &ASnakePawn::execUpdateDirection },
@@ -333,6 +379,24 @@ struct Z_Construct_UClass_ASnakePawn_Statics
 		{ "ToolTip", "Distance the snake has moved within a tile." },
 #endif
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_RotationMap_MetaData[] = {
+		{ "ModuleRelativePath", "SnakePawn.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Converts an ESnakeDirection to an FRotation." },
+#endif
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SpeedMap_MetaData[] = {
+		{ "ModuleRelativePath", "SnakePawn.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Converts an ESnakeDirection to an FVector3d." },
+#endif
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_InverseMap_MetaData[] = {
+		{ "ModuleRelativePath", "SnakePawn.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Finds the opposite Direction of an ESnakeDirection." },
+#endif
+	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_SceneComponent;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_CollisionComponent;
@@ -344,11 +408,25 @@ struct Z_Construct_UClass_ASnakePawn_Statics
 	static const UECodeGen_Private::FEnumPropertyParams NewProp_DirectionQueue_Inner;
 	static const UECodeGen_Private::FArrayPropertyParams NewProp_DirectionQueue;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_MovedTileDistance;
+	static const UECodeGen_Private::FStructPropertyParams NewProp_RotationMap_ValueProp;
+	static const UECodeGen_Private::FBytePropertyParams NewProp_RotationMap_Key_KeyProp_Underlying;
+	static const UECodeGen_Private::FEnumPropertyParams NewProp_RotationMap_Key_KeyProp;
+	static const UECodeGen_Private::FMapPropertyParams NewProp_RotationMap;
+	static const UECodeGen_Private::FStructPropertyParams NewProp_SpeedMap_ValueProp;
+	static const UECodeGen_Private::FBytePropertyParams NewProp_SpeedMap_Key_KeyProp_Underlying;
+	static const UECodeGen_Private::FEnumPropertyParams NewProp_SpeedMap_Key_KeyProp;
+	static const UECodeGen_Private::FMapPropertyParams NewProp_SpeedMap;
+	static const UECodeGen_Private::FBytePropertyParams NewProp_InverseMap_ValueProp_Underlying;
+	static const UECodeGen_Private::FEnumPropertyParams NewProp_InverseMap_ValueProp;
+	static const UECodeGen_Private::FBytePropertyParams NewProp_InverseMap_Key_KeyProp_Underlying;
+	static const UECodeGen_Private::FEnumPropertyParams NewProp_InverseMap_Key_KeyProp;
+	static const UECodeGen_Private::FMapPropertyParams NewProp_InverseMap;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
 		{ &Z_Construct_UFunction_ASnakePawn_Jump, "Jump" }, // 3694517731
 		{ &Z_Construct_UFunction_ASnakePawn_MoveSnake, "MoveSnake" }, // 2773443987
+		{ &Z_Construct_UFunction_ASnakePawn_OnCollision, "OnCollision" }, // 1542078409
 		{ &Z_Construct_UFunction_ASnakePawn_QueueNewDirection, "QueueNewDirection" }, // 644784545
 		{ &Z_Construct_UFunction_ASnakePawn_RotateSnake, "RotateSnake" }, // 3127841599
 		{ &Z_Construct_UFunction_ASnakePawn_UpdateDirection, "UpdateDirection" }, // 662243549
@@ -370,6 +448,19 @@ const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_ASnakePawn_Stati
 const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_ASnakePawn_Statics::NewProp_DirectionQueue_Inner = { "DirectionQueue", nullptr, (EPropertyFlags)0x0000000000020000, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UEnum_SnakeGame_ESnakeDirection, METADATA_PARAMS(0, nullptr) }; // 214707847
 const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ASnakePawn_Statics::NewProp_DirectionQueue = { "DirectionQueue", nullptr, (EPropertyFlags)0x0020080000020015, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASnakePawn, DirectionQueue), EArrayPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DirectionQueue_MetaData), NewProp_DirectionQueue_MetaData) }; // 214707847
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ASnakePawn_Statics::NewProp_MovedTileDistance = { "MovedTileDistance", nullptr, (EPropertyFlags)0x0020080000020015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASnakePawn, MovedTileDistance), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MovedTileDistance_MetaData), NewProp_MovedTileDistance_MetaData) };
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_ASnakePawn_Statics::NewProp_RotationMap_ValueProp = { "RotationMap", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 1, Z_Construct_UScriptStruct_FRotator, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_ASnakePawn_Statics::NewProp_RotationMap_Key_KeyProp_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_ASnakePawn_Statics::NewProp_RotationMap_Key_KeyProp = { "RotationMap_Key", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UEnum_SnakeGame_ESnakeDirection, METADATA_PARAMS(0, nullptr) }; // 214707847
+const UECodeGen_Private::FMapPropertyParams Z_Construct_UClass_ASnakePawn_Statics::NewProp_RotationMap = { "RotationMap", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASnakePawn, RotationMap), EMapPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_RotationMap_MetaData), NewProp_RotationMap_MetaData) }; // 214707847
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_ASnakePawn_Statics::NewProp_SpeedMap_ValueProp = { "SpeedMap", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 1, Z_Construct_UScriptStruct_FVector3d, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_ASnakePawn_Statics::NewProp_SpeedMap_Key_KeyProp_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_ASnakePawn_Statics::NewProp_SpeedMap_Key_KeyProp = { "SpeedMap_Key", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UEnum_SnakeGame_ESnakeDirection, METADATA_PARAMS(0, nullptr) }; // 214707847
+const UECodeGen_Private::FMapPropertyParams Z_Construct_UClass_ASnakePawn_Statics::NewProp_SpeedMap = { "SpeedMap", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASnakePawn, SpeedMap), EMapPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SpeedMap_MetaData), NewProp_SpeedMap_MetaData) }; // 214707847
+const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_ASnakePawn_Statics::NewProp_InverseMap_ValueProp_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_ASnakePawn_Statics::NewProp_InverseMap_ValueProp = { "InverseMap", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 1, Z_Construct_UEnum_SnakeGame_ESnakeDirection, METADATA_PARAMS(0, nullptr) }; // 214707847
+const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_ASnakePawn_Statics::NewProp_InverseMap_Key_KeyProp_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_ASnakePawn_Statics::NewProp_InverseMap_Key_KeyProp = { "InverseMap_Key", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UEnum_SnakeGame_ESnakeDirection, METADATA_PARAMS(0, nullptr) }; // 214707847
+const UECodeGen_Private::FMapPropertyParams Z_Construct_UClass_ASnakePawn_Statics::NewProp_InverseMap = { "InverseMap", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASnakePawn, InverseMap), EMapPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_InverseMap_MetaData), NewProp_InverseMap_MetaData) }; // 214707847 214707847
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ASnakePawn_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASnakePawn_Statics::NewProp_SceneComponent,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASnakePawn_Statics::NewProp_CollisionComponent,
@@ -381,6 +472,19 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ASnakePaw
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASnakePawn_Statics::NewProp_DirectionQueue_Inner,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASnakePawn_Statics::NewProp_DirectionQueue,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASnakePawn_Statics::NewProp_MovedTileDistance,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASnakePawn_Statics::NewProp_RotationMap_ValueProp,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASnakePawn_Statics::NewProp_RotationMap_Key_KeyProp_Underlying,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASnakePawn_Statics::NewProp_RotationMap_Key_KeyProp,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASnakePawn_Statics::NewProp_RotationMap,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASnakePawn_Statics::NewProp_SpeedMap_ValueProp,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASnakePawn_Statics::NewProp_SpeedMap_Key_KeyProp_Underlying,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASnakePawn_Statics::NewProp_SpeedMap_Key_KeyProp,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASnakePawn_Statics::NewProp_SpeedMap,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASnakePawn_Statics::NewProp_InverseMap_ValueProp_Underlying,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASnakePawn_Statics::NewProp_InverseMap_ValueProp,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASnakePawn_Statics::NewProp_InverseMap_Key_KeyProp_Underlying,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASnakePawn_Statics::NewProp_InverseMap_Key_KeyProp,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASnakePawn_Statics::NewProp_InverseMap,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ASnakePawn_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_ASnakePawn_Statics::DependentSingletons[])() = {
@@ -420,14 +524,14 @@ ASnakePawn::~ASnakePawn() {}
 // End Class ASnakePawn
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePawn_h_Statics
+struct Z_CompiledInDeferFile_FID_Users_Linus_Jernstrom_Documents_GitHub_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePawn_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ASnakePawn, ASnakePawn::StaticClass, TEXT("ASnakePawn"), &Z_Registration_Info_UClass_ASnakePawn, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASnakePawn), 1726944019U) },
+		{ Z_Construct_UClass_ASnakePawn, ASnakePawn::StaticClass, TEXT("ASnakePawn"), &Z_Registration_Info_UClass_ASnakePawn, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASnakePawn), 3995893690U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePawn_h_1928416200(TEXT("/Script/SnakeGame"),
-	Z_CompiledInDeferFile_FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePawn_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePawn_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Linus_Jernstrom_Documents_GitHub_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePawn_h_1931812985(TEXT("/Script/SnakeGame"),
+	Z_CompiledInDeferFile_FID_Users_Linus_Jernstrom_Documents_GitHub_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePawn_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Linus_Jernstrom_Documents_GitHub_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePawn_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration

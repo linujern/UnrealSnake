@@ -9,13 +9,15 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class AActor;
 enum class ESnakeDirection : uint8;
 #ifdef SNAKEGAME_SnakePawn_generated_h
 #error "SnakePawn.generated.h already included, missing '#pragma once' in SnakePawn.h"
 #endif
 #define SNAKEGAME_SnakePawn_generated_h
 
-#define FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePawn_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Users_Linus_Jernstrom_Documents_GitHub_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePawn_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execOnCollision); \
 	DECLARE_FUNCTION(execQueueNewDirection); \
 	DECLARE_FUNCTION(execJump); \
 	DECLARE_FUNCTION(execRotateSnake); \
@@ -24,7 +26,7 @@ enum class ESnakeDirection : uint8;
 	DECLARE_FUNCTION(execUpdateDirection);
 
 
-#define FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePawn_h_13_INCLASS_NO_PURE_DECLS \
+#define FID_Users_Linus_Jernstrom_Documents_GitHub_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePawn_h_14_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesASnakePawn(); \
 	friend struct Z_Construct_UClass_ASnakePawn_Statics; \
@@ -33,7 +35,7 @@ public: \
 	DECLARE_SERIALIZER(ASnakePawn)
 
 
-#define FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePawn_h_13_ENHANCED_CONSTRUCTORS \
+#define FID_Users_Linus_Jernstrom_Documents_GitHub_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePawn_h_14_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	ASnakePawn(ASnakePawn&&); \
@@ -45,13 +47,13 @@ public: \
 	NO_API virtual ~ASnakePawn();
 
 
-#define FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePawn_h_11_PROLOG
-#define FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePawn_h_13_GENERATED_BODY \
+#define FID_Users_Linus_Jernstrom_Documents_GitHub_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePawn_h_12_PROLOG
+#define FID_Users_Linus_Jernstrom_Documents_GitHub_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePawn_h_14_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePawn_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePawn_h_13_INCLASS_NO_PURE_DECLS \
-	FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePawn_h_13_ENHANCED_CONSTRUCTORS \
+	FID_Users_Linus_Jernstrom_Documents_GitHub_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePawn_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Users_Linus_Jernstrom_Documents_GitHub_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePawn_h_14_INCLASS_NO_PURE_DECLS \
+	FID_Users_Linus_Jernstrom_Documents_GitHub_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePawn_h_14_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -59,7 +61,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> SNAKEGAME_API UClass* StaticClass<class ASnakePawn>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePawn_h
+#define CURRENT_FILE_ID FID_Users_Linus_Jernstrom_Documents_GitHub_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePawn_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

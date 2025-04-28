@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
 #include "Components/SphereComponent.h"
+#include "Apple.h"
 #include "Definitions.h"
 #include "SnakePawn.generated.h"
 
@@ -78,4 +79,7 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void QueueNewDirection(ESnakeDirection InDirection);
+
+	UFUNCTION(blueprintCallable)
+	void OnCollision(AActor* OtherActor);
 };

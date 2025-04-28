@@ -30,6 +30,15 @@
     <Filter Include="Source\SnakeGame">
       <UniqueIdentifier>{556ADF33-95A1-3DCC-AC26-8E401112CF35}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\SnakeGame\Apple.cpp">
+      <Filter>Source\SnakeGame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\SnakeGame\Apple.h">
+      <Filter>Source\SnakeGame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\SnakeGame\Definitions.h">
+      <Filter>Source\SnakeGame</Filter>
+    </ClCompile>
     <None Include="..\..\Source\SnakeGame\SnakeGame.Build.cs">
       <Filter>Source\SnakeGame</Filter>
     </None>
@@ -43,6 +52,12 @@
       <Filter>Source\SnakeGame</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\SnakeGame\SnakePawn.h">
+      <Filter>Source\SnakeGame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\SnakeGame\SnakeWorld.cpp">
+      <Filter>Source\SnakeGame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\SnakeGame\SnakeWorld.h">
       <Filter>Source\SnakeGame</Filter>
     </ClCompile>
   </ItemGroup>

@@ -16,7 +16,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define SNAKEGAME_Definitions_generated_h
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_Definitions_h
+#define CURRENT_FILE_ID FID_Users_Linus_Jernstrom_Documents_GitHub_UnrealSnake_SnakeGame_Source_SnakeGame_Definitions_h
 
 
 #define FOREACH_ENUM_ESNAKEDIRECTION(op) \
