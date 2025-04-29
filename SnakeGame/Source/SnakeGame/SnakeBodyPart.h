@@ -1,0 +1,52 @@
+// Fill out your copyright notice in the Description page of Project Settings.
+
+#pragma once
+
+#include "CoreMinimal.h"
+#include "GameFramework/Actor.h"
+#include "Components/SphereComponent.h"
+#include "SnakeBodyPart.generated.h"
+
+UCLASS()
+class SNAKEGAME_API ASnakeBodyPart : public AActor
+{
+	GENERATED_BODY()
+	
+public:	
+	// Sets default values for this actor's properties
+	ASnakeBodyPart();
+
+	// Root of the blueprint
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	USceneComponent* SceneComponent;
+
+	// Collision
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	USphereComponent* CollisionComponent;
+
+	// Head of the snake
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UStaticMeshComponent* MeshComponent;
+	
+	UPROPERTY()
+	float Speed;
+protected:
+	UPROPERTY()
+    ASnakeBodyPart* ChildBodyPart = nullptr;
+  
+    UPROPERTY()
+    FVector NextPosition = FVector::ZeroVector;
+
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
+	
+public:	
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
+
+	UFUNCTION()
+	void AddChildBodyPart(ASnakeBodyPart* InChildBodyPart);
+	
+	UFUNCTION()
+	void SetNextPosition(const FVector& InPosition);
+};

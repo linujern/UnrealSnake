@@ -6,6 +6,7 @@
 #include "GameFramework/Pawn.h"
 #include "Components/SphereComponent.h"
 #include "Apple.h"
+#include "SnakeBodyPart.h"
 #include "Definitions.h"
 #include "SnakePawn.generated.h"
 
@@ -31,6 +32,9 @@ public:
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (ToolTip  = "Direction the snake will move in."))
 	ESnakeDirection Direction = ESnakeDirection::None;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TSubclassOf<ASnakeBodyPart> BodyPartClass;
 	
 protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (ToolTip  = "Speed of the snake in cm/second."))
@@ -41,6 +45,9 @@ protected:
 	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (ToolTip = "Distance the snake has moved within a tile."))
 	float MovedTileDistance = 0;
+
+	UPROPERTY()
+	ASnakeBodyPart* ChildBodyPart = nullptr;
 	
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -56,6 +63,9 @@ protected:
 
 	UFUNCTION(meta = (ToolTip = "Rotates the snake visually."))
 	void RotateSnake();
+
+	UFUNCTION()
+	void AteApple();
 
 private:
 	UPROPERTY(meta = (ToolTip = "Converts an ESnakeDirection to an FRotation."))

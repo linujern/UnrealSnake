@@ -70,6 +70,9 @@ void ASnakePawn::RotateSnake() {
 
 
 void ASnakePawn::UpdateDirection() {
+	if (IsValid(ChildBodyPart))
+		ChildBodyPart->SetNextPosition(GetActorLocation());
+	
 	if(DirectionQueue.IsEmpty())
 		return;
 
@@ -100,15 +103,29 @@ void ASnakePawn::Jump() {
 
 void ASnakePawn::OnCollision(AActor* OtherActor) {
 	if (Cast<AApple>(OtherActor) != nullptr) {
+		AteApple();
 		OtherActor->Destroy();
 	}
-	
+	else {
+		UE_LOG(LogTemp, Warning, TEXT("COLLISION with \"" + OtherActor->GetName() + "\" at "));
+	}
 }
+
+void ASnakePawn::AteApple() {
+	ASnakeBodyPart* BodyPart = GetWorld()->SpawnActor<ASnakeBodyPart>(BodyPartClass, GetActorLocation(), GetActorRotation(), FActorSpawnParameters());
+	BodyPart->Speed = Speed;
+	
+	if(IsValid(ChildBodyPart))
+		ChildBodyPart->AddChildBodyPart(BodyPart);
+	else
+		ChildBodyPart = BodyPart;
+}
+
 
 
 // Called to bind functionality to input
 void ASnakePawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
-
+	
 }
 

@@ -39,6 +39,12 @@
     <ClCompile Include="..\..\Source\SnakeGame\Definitions.h">
       <Filter>Source\SnakeGame</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\SnakeGame\SnakeBodyPart.cpp">
+      <Filter>Source\SnakeGame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\SnakeGame\SnakeBodyPart.h">
+      <Filter>Source\SnakeGame</Filter>
+    </ClCompile>
     <None Include="..\..\Source\SnakeGame\SnakeGame.Build.cs">
       <Filter>Source\SnakeGame</Filter>
     </None>

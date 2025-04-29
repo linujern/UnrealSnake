@@ -5,11 +5,11 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
 #include "Components/InstancedStaticMeshComponent.h"
+#include "Definitions.h"
 #include "SnakeWorld.generated.h"
 
 UCLASS()
-class SNAKEGAME_API ASnakeWorld : public APawn
-{
+class SNAKEGAME_API ASnakeWorld : public APawn {
 	GENERATED_BODY()
 
 public:
@@ -21,6 +21,8 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	UInstancedStaticMeshComponent* InstancedWalls;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UInstancedStaticMeshComponent* InstancedFloors;
 
 	virtual void OnConstruction(const FTransform& Transform) override;
 

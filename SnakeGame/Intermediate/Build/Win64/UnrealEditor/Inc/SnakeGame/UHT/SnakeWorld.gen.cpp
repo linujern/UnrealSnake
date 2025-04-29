@@ -45,9 +45,15 @@ struct Z_Construct_UClass_ASnakeWorld_Statics
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "SnakeWorld.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_InstancedFloors_MetaData[] = {
+		{ "Category", "SnakeWorld" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "SnakeWorld.h" },
+	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_SceneComponent;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_InstancedWalls;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_InstancedFloors;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -57,9 +63,11 @@ struct Z_Construct_UClass_ASnakeWorld_Statics
 };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASnakeWorld_Statics::NewProp_SceneComponent = { "SceneComponent", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASnakeWorld, SceneComponent), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SceneComponent_MetaData), NewProp_SceneComponent_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASnakeWorld_Statics::NewProp_InstancedWalls = { "InstancedWalls", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASnakeWorld, InstancedWalls), Z_Construct_UClass_UInstancedStaticMeshComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_InstancedWalls_MetaData), NewProp_InstancedWalls_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASnakeWorld_Statics::NewProp_InstancedFloors = { "InstancedFloors", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASnakeWorld, InstancedFloors), Z_Construct_UClass_UInstancedStaticMeshComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_InstancedFloors_MetaData), NewProp_InstancedFloors_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ASnakeWorld_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASnakeWorld_Statics::NewProp_SceneComponent,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASnakeWorld_Statics::NewProp_InstancedWalls,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASnakeWorld_Statics::NewProp_InstancedFloors,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ASnakeWorld_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_ASnakeWorld_Statics::DependentSingletons[])() = {
@@ -99,14 +107,14 @@ ASnakeWorld::~ASnakeWorld() {}
 // End Class ASnakeWorld
 
 // Begin Registration
-struct Z_CompiledInDeferFile_FID_Users_Linus_Jernstrom_Documents_GitHub_UnrealSnake_SnakeGame_Source_SnakeGame_SnakeWorld_h_Statics
+struct Z_CompiledInDeferFile_FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakeWorld_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ASnakeWorld, ASnakeWorld::StaticClass, TEXT("ASnakeWorld"), &Z_Registration_Info_UClass_ASnakeWorld, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASnakeWorld), 1716496532U) },
+		{ Z_Construct_UClass_ASnakeWorld, ASnakeWorld::StaticClass, TEXT("ASnakeWorld"), &Z_Registration_Info_UClass_ASnakeWorld, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASnakeWorld), 4006403933U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_Linus_Jernstrom_Documents_GitHub_UnrealSnake_SnakeGame_Source_SnakeGame_SnakeWorld_h_1154755566(TEXT("/Script/SnakeGame"),
-	Z_CompiledInDeferFile_FID_Users_Linus_Jernstrom_Documents_GitHub_UnrealSnake_SnakeGame_Source_SnakeGame_SnakeWorld_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_Linus_Jernstrom_Documents_GitHub_UnrealSnake_SnakeGame_Source_SnakeGame_SnakeWorld_h_Statics::ClassInfo),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakeWorld_h_979596130(TEXT("/Script/SnakeGame"),
+	Z_CompiledInDeferFile_FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakeWorld_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakeWorld_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
 // End Registration
