@@ -1,12 +1,12 @@
-"C:\GitRepos\UnrealSnake\SnakeGame\Intermediate\Build\Win64\UnrealEditor\Inc\SnakeGame\UHT\SnakePlayerState.gen.cpp"
-/FI"C:\GitRepos\UnrealSnake\SnakeGame\Intermediate\Build\Win64\x64\SnakeGameEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h"
-/FI"C:\GitRepos\UnrealSnake\SnakeGame\Intermediate\Build\Win64\x64\UnrealEditor\Development\SnakeGame\Definitions.SnakeGame.h"
-/Yu"C:\GitRepos\UnrealSnake\SnakeGame\Intermediate\Build\Win64\x64\SnakeGameEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h"
-/Fp"C:\GitRepos\UnrealSnake\SnakeGame\Intermediate\Build\Win64\x64\SnakeGameEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h.pch"
-/Fo"C:\GitRepos\UnrealSnake\SnakeGame\Intermediate\Build\Win64\x64\UnrealEditor\Development\SnakeGame\SnakePlayerState.gen.cpp.obj"
-/experimental:log "C:\GitRepos\UnrealSnake\SnakeGame\Intermediate\Build\Win64\x64\UnrealEditor\Development\SnakeGame\SnakePlayerState.gen.cpp.sarif"
-/sourceDependencies "C:\GitRepos\UnrealSnake\SnakeGame\Intermediate\Build\Win64\x64\UnrealEditor\Development\SnakeGame\SnakePlayerState.gen.cpp.dep.json"
-@"C:\GitRepos\UnrealSnake\SnakeGame\Intermediate\Build\Win64\x64\UnrealEditor\Development\SnakeGame\SnakeGame.Shared.rsp"
+"C:\Users\Linus.Jernstrom\Documents\GitHub\UnrealSnake\SnakeGame\Intermediate\Build\Win64\UnrealEditor\Inc\SnakeGame\UHT\SnakePlayerState.gen.cpp"
+/FI"C:\Users\Linus.Jernstrom\Documents\GitHub\UnrealSnake\SnakeGame\Intermediate\Build\Win64\x64\SnakeGameEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h"
+/FI"C:\Users\Linus.Jernstrom\Documents\GitHub\UnrealSnake\SnakeGame\Intermediate\Build\Win64\x64\UnrealEditor\Development\SnakeGame\Definitions.SnakeGame.h"
+/Yu"C:\Users\Linus.Jernstrom\Documents\GitHub\UnrealSnake\SnakeGame\Intermediate\Build\Win64\x64\SnakeGameEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h"
+/Fp"C:\Users\Linus.Jernstrom\Documents\GitHub\UnrealSnake\SnakeGame\Intermediate\Build\Win64\x64\SnakeGameEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h.pch"
+/Fo"C:\Users\Linus.Jernstrom\Documents\GitHub\UnrealSnake\SnakeGame\Intermediate\Build\Win64\x64\UnrealEditor\Development\SnakeGame\SnakePlayerState.gen.cpp.obj"
+/experimental:log "C:\Users\Linus.Jernstrom\Documents\GitHub\UnrealSnake\SnakeGame\Intermediate\Build\Win64\x64\UnrealEditor\Development\SnakeGame\SnakePlayerState.gen.cpp.sarif"
+/sourceDependencies "C:\Users\Linus.Jernstrom\Documents\GitHub\UnrealSnake\SnakeGame\Intermediate\Build\Win64\x64\UnrealEditor\Development\SnakeGame\SnakePlayerState.gen.cpp.dep.json"
+@"C:\Users\Linus.Jernstrom\Documents\GitHub\UnrealSnake\SnakeGame\Intermediate\Build\Win64\x64\UnrealEditor\Development\SnakeGame\SnakeGame.Shared.rsp"
 /d2ssa-cfg-question-
 /Zc:inline
 /nologo

@@ -56,6 +56,9 @@ void ASnakePawn::UpdateMovement(float DeltaTime) {
 
 		MoveSnake(MoveDistance);
 		UpdateDirection();
+		
+		if (IsValid(ChildBodyPart))
+			ChildBodyPart->SetNextPosition(GetActorLocation());
 
 		TotalMoveDistance -= MoveDistance;
 		MoveDistance = TotalMoveDistance;
@@ -75,15 +78,12 @@ void ASnakePawn::MoveSnake(float Distance) {
 	MovedTileDistance += Distance;
 }
 
-void ASnakePawn::RotateSnake() {
-	const FRotator Rotation = RotationMap[Direction];
+void ASnakePawn::RotateSnake(ESnakeDirection InDirection) {
+	const FRotator Rotation = RotationMap[InDirection];
 	MeshComponent->SetWorldRotation(Rotation);
 }
 
 void ASnakePawn::UpdateDirection() {
-	if (IsValid(ChildBodyPart))
-		ChildBodyPart->SetNextPosition(GetActorLocation());
-	
 	if(DirectionQueue.IsEmpty())
 		return;
 
@@ -98,7 +98,7 @@ void ASnakePawn::UpdateDirection() {
 	Direction = DirectionQueue[0];
 	DirectionQueue.RemoveAt(0);
 	
-	RotateSnake();
+	RotateSnake(Direction);
 }
 
 void ASnakePawn::QueueNewDirection(ESnakeDirection InDirection) {

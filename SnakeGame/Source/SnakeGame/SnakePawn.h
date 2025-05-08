@@ -64,7 +64,7 @@ protected:
 	void MoveSnake(float Distance);
 
 	UFUNCTION(meta = (ToolTip = "Rotates the snake visually."))
-	void RotateSnake();
+	void RotateSnake(ESnakeDirection InDirection);
 
 	UFUNCTION()
 	void AteApple();

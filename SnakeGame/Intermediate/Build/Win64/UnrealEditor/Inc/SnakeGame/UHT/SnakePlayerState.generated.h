@@ -14,11 +14,11 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define SNAKEGAME_SnakePlayerState_generated_h
 
-#define FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePlayerState_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Users_Linus_Jernstrom_Documents_GitHub_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePlayerState_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execGetSnakeSpeed);
 
 
-#define FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePlayerState_h_15_INCLASS_NO_PURE_DECLS \
+#define FID_Users_Linus_Jernstrom_Documents_GitHub_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePlayerState_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesASnakePlayerState(); \
 	friend struct Z_Construct_UClass_ASnakePlayerState_Statics; \
@@ -27,7 +27,7 @@ public: \
 	DECLARE_SERIALIZER(ASnakePlayerState)
 
 
-#define FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePlayerState_h_15_ENHANCED_CONSTRUCTORS \
+#define FID_Users_Linus_Jernstrom_Documents_GitHub_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePlayerState_h_15_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ASnakePlayerState(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 private: \
@@ -41,13 +41,13 @@ public: \
 	NO_API virtual ~ASnakePlayerState();
 
 
-#define FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePlayerState_h_12_PROLOG
-#define FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePlayerState_h_15_GENERATED_BODY \
+#define FID_Users_Linus_Jernstrom_Documents_GitHub_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePlayerState_h_12_PROLOG
+#define FID_Users_Linus_Jernstrom_Documents_GitHub_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePlayerState_h_15_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePlayerState_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePlayerState_h_15_INCLASS_NO_PURE_DECLS \
-	FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePlayerState_h_15_ENHANCED_CONSTRUCTORS \
+	FID_Users_Linus_Jernstrom_Documents_GitHub_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePlayerState_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Users_Linus_Jernstrom_Documents_GitHub_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePlayerState_h_15_INCLASS_NO_PURE_DECLS \
+	FID_Users_Linus_Jernstrom_Documents_GitHub_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePlayerState_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -55,7 +55,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> SNAKEGAME_API UClass* StaticClass<class ASnakePlayerState>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePlayerState_h
+#define CURRENT_FILE_ID FID_Users_Linus_Jernstrom_Documents_GitHub_UnrealSnake_SnakeGame_Source_SnakeGame_SnakePlayerState_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
