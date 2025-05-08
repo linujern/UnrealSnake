@@ -29,6 +29,7 @@ public:
 	// Head of the snake
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	UStaticMeshComponent* MeshComponent;
+	
 protected:
 	UPROPERTY()
     ASnakeBodyPart* ChildBodyPart = nullptr;

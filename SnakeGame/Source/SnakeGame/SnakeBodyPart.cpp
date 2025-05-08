@@ -36,16 +36,16 @@ void ASnakeBodyPart::Tick(float DeltaTime) {
         return;
 	}
 	
-	float Speed = PlayerState->GetSnakeSpeed();
-
-	if (NextPosition != FVector::ZeroVector) {
-		FVector Position = GetActorLocation();
-		FVector Forward = (NextPosition - Position).GetSafeNormal();
-
-		Position += Forward * DeltaTime * Speed;
-
-		SetActorLocation(Position);
+	if (NextPosition == FVector::ZeroVector) {
+		return;
 	}
+	
+	FVector Position = GetActorLocation();
+	float Speed = PlayerState->GetSnakeSpeed();
+	
+    FVector Forward = (NextPosition - Position).GetSafeNormal();
+    FVector NewPos = Position + Forward * DeltaTime * Speed;
+    SetActorLocation(NewPos);
 }
 
 void ASnakeBodyPart::AddChildBodyPart(ASnakeBodyPart* InChildBodyPart) {

@@ -13,44 +13,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ac144ea-d761-4c3a-96fd-7a333d6cf611" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SnakeGame/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SnakeGame/.idea/projectSettingsUpdater.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SnakeGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SnakeGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/BuildRules/SnakeGameModuleRules.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/BuildRules/SnakeGameModuleRules.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/BuildRules/SnakeGameModuleRulesManifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/BuildRules/SnakeGameModuleRulesManifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Binaries/Win64/UnrealEditor-SnakeGame-8981.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Binaries/Win64/UnrealEditor-SnakeGame.exp" beforeDir="false" afterPath="$PROJECT_DIR$/Binaries/Win64/UnrealEditor-SnakeGame.exp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Binaries/Win64/UnrealEditor-SnakeGame.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Binaries/Win64/UnrealEditor-SnakeGame.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Binaries/Win64/UnrealEditor.modules" beforeDir="false" afterPath="$PROJECT_DIR$/Binaries/Win64/UnrealEditor.modules" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/World/BP_Apple.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/World/BP_Apple.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Intermediate/Build/BuildRulesProjects/SnakeGameModuleRules/obj/Development/SnakeGameModuleRules.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/BuildRulesProjects/SnakeGameModuleRules/obj/Development/SnakeGameModuleRules.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Intermediate/Build/BuildRulesProjects/SnakeGameModuleRules/obj/Development/SnakeGameModuleRules.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/BuildRulesProjects/SnakeGameModuleRules/obj/Development/SnakeGameModuleRules.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/BuildRulesProjects/SnakeGameModuleRules/obj/Development/SnakeGameModuleRules.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/BuildRulesProjects/SnakeGameModuleRules/obj/Development/SnakeGameModuleRules.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/BuildRulesProjects/SnakeGameModuleRules/obj/Development/SnakeGameModuleRules.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/BuildRulesProjects/SnakeGameModuleRules/obj/Development/SnakeGameModuleRules.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/BuildRulesProjects/SnakeGameModuleRules/obj/Development/SnakeGameModuleRules.csproj.AssemblyReference.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/BuildRulesProjects/SnakeGameModuleRules/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/BuildRulesProjects/SnakeGameModuleRules/obj/project.packagespec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Intermediate/Build/BuildRulesProjects/SnakeGameModuleRules/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/BuildRulesProjects/SnakeGameModuleRules/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/Core/SharedPCH.Core.Cpp20.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/Core/SharedPCH.Core.Cpp20.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/Core/SharedPCH.Core.Cpp20.h" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/Core/SharedPCH.Core.Cpp20.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/Core/SharedPCH.Core.RTTI.Cpp20.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/Core/SharedPCH.Core.RTTI.Cpp20.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/Core/SharedPCH.Core.RTTI.Cpp20.h" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/Core/SharedPCH.Core.RTTI.Cpp20.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/CoreUObject/SharedPCH.CoreUObject.Cpp20.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/CoreUObject/SharedPCH.CoreUObject.Cpp20.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/CoreUObject/SharedPCH.CoreUObject.Cpp20.h" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/CoreUObject/SharedPCH.CoreUObject.Cpp20.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/CoreUObject/SharedPCH.CoreUObject.RTTI.Cpp20.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/CoreUObject/SharedPCH.CoreUObject.RTTI.Cpp20.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/CoreUObject/SharedPCH.CoreUObject.RTTI.Cpp20.h" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/CoreUObject/SharedPCH.CoreUObject.RTTI.Cpp20.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/Engine/SharedPCH.Engine.Cpp20.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/Engine/SharedPCH.Engine.Cpp20.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/Engine/SharedPCH.Engine.Cpp20.h" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/Engine/SharedPCH.Engine.Cpp20.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/Engine/SharedPCH.Engine.Project.ValApi.Cpp20.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/Engine/SharedPCH.Engine.Project.ValApi.Cpp20.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/Engine/SharedPCH.Engine.Project.ValApi.Cpp20.h" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/Engine/SharedPCH.Engine.Project.ValApi.Cpp20.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/Slate/SharedPCH.Slate.Cpp20.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/Slate/SharedPCH.Slate.Cpp20.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/Slate/SharedPCH.Slate.Cpp20.h" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/Slate/SharedPCH.Slate.Cpp20.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/UnrealEd/SharedPCH.UnrealEd.Cpp20.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/UnrealEd/SharedPCH.UnrealEd.Cpp20.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/UnrealEd/SharedPCH.UnrealEd.Cpp20.h" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/UnrealEd/SharedPCH.UnrealEd.Cpp20.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.Cpp20.h" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.Cpp20.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/UnrealEd/SharedPCH.UnrealEd.RTTI.Cpp20.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/UnrealEd/SharedPCH.UnrealEd.RTTI.Cpp20.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/UnrealEd/SharedPCH.UnrealEd.RTTI.Cpp20.h" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/UnrealEd/SharedPCH.UnrealEd.RTTI.Cpp20.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/SnakeGame/Definitions.SnakeGame.h" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/SnakeGame/Definitions.SnakeGame.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/XmlConfigCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/XmlConfigCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/ProjectFiles/.Rider/Win64/Development/Editor/SnakeGame.json" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/ProjectFiles/.Rider/Win64/Development/Editor/SnakeGame.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/ProjectFiles/.Rider/Win64/Development/Editor/UE5.json" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/ProjectFiles/.Rider/Win64/Development/Editor/UE5.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/ProjectFiles/.Rider/Win64/Development/Editor/UnrealEditor.json" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/ProjectFiles/.Rider/Win64/Development/Editor/UnrealEditor.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/ProjectFiles/.Rider/root.json" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/ProjectFiles/.Rider/root.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/TargetInfo.Engine.json" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/TargetInfo.Engine.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/TargetInfo.SnakeGame.json" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/TargetInfo.SnakeGame.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Intermediate/Build/SourceFileCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/SourceFileCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/ActionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/ActionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/SnakeGameEditor/Development/SnakeGameEditor.uhtmanifest" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/SnakeGameEditor/Development/SnakeGameEditor.uhtmanifest" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/DependencyCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/DependencyCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/HotReload.state" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/HotReload.state" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/Makefile.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/Makefile.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/Metadata-HotReload.dat" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/SnakeGameEditor/Development/Metadata-HotReload.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/ActionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/ActionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/SnakeGame/UnrealEditor-SnakeGame.dll.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/SnakeGame/UnrealEditor-SnakeGame.dll.rsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/SnakeGame/UnrealEditor-SnakeGame.dll.rsp.old" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/SnakeGame/UnrealEditor-SnakeGame.dll.rsp.old" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/SnakeGame/UnrealEditor-SnakeGame.exp" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/SnakeGame/UnrealEditor-SnakeGame.exp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/SnakeGame/UnrealEditor-SnakeGame.lib.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/SnakeGame/UnrealEditor-SnakeGame.lib.rsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/SnakeGame/UnrealEditor-SnakeGame.lib.rsp.old" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/SnakeGame/UnrealEditor-SnakeGame.lib.rsp.old" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Intermediate/CachedAssetRegistry_0.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/CachedAssetRegistry_0.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saved/Autosaves/PackageRestoreData.json" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/Autosaves/PackageRestoreData.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saved/Config/WindowsEditor/EditorPerProjectUserSettings.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/Config/WindowsEditor/EditorPerProjectUserSettings.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saved/Logs/SnakeGame-backup-2025.05.04-13.26.42.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saved/Logs/SnakeGame.log" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/Logs/SnakeGame.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SnakeGame/SnakeBodyPart.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SnakeGame/SnakeBodyPart.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SnakeGame/SnakeBodyPart.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SnakeGame/SnakeBodyPart.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SnakeGame/SnakePawn.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SnakeGame/SnakePawn.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,22 +79,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Project.AutomationTool.executor": "Run",
-    "C++ Project.SnakeGame.executor": "Run",
-    "C/C++ Project.SnakeGame.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Project.AutomationTool.executor&quot;: &quot;Run&quot;,
+    &quot;C++ Project.SnakeGame.executor&quot;: &quot;Run&quot;,
+    &quot;C/C++ Project.SnakeGame.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="C/C++ Project.SnakeGame">
     <configuration name="SnakeGame" type="CppProject" factoryName="C++ Project">
       <configuration_1 setup="1">
@@ -581,6 +573,7 @@
       <workItem from="1746361318621" duration="2251000" />
       <workItem from="1746364040217" duration="8559000" />
       <workItem from="1746694427188" duration="110000" />
+      <workItem from="1746705636153" duration="3199000" />
     </task>
     <servers />
   </component>

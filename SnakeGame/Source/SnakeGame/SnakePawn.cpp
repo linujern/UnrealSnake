@@ -73,8 +73,8 @@ void ASnakePawn::MoveSnake(float Distance) {
 	const FVector Position = GetActorLocation();
 
 	const FVector3d MoveVector = Distance * SpeedMap[Direction];
-	SetActorLocation(Position + MoveVector);
 	
+	SetActorLocation(Position + MoveVector);
 	MovedTileDistance += Distance;
 }
 
