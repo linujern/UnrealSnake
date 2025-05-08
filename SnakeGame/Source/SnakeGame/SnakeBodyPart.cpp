@@ -2,6 +2,7 @@
 
 
 #include "SnakeBodyPart.h"
+#include "SnakePlayerState.h"
 
 // Sets default values
 ASnakeBodyPart::ASnakeBodyPart() {
@@ -16,18 +17,26 @@ ASnakeBodyPart::ASnakeBodyPart() {
 
 	MeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Head"));
 	MeshComponent->SetupAttachment(RootComponent);
-
 }
 
 // Called when the game starts or when spawned
 void ASnakeBodyPart::BeginPlay() {
 	Super::BeginPlay();
-	
+
+	AController* Controller = GetInstigatorController();
+	PlayerState = Controller->GetPlayerState<ASnakePlayerState>();
 }
 
 // Called every frame
 void ASnakeBodyPart::Tick(float DeltaTime) {
 	Super::Tick(DeltaTime);
+
+	if(!IsValid(PlayerState)) {
+        UE_LOG(LogTemp, Error, TEXT("ASnakeBodyPart::BeginPlay - SnakePlayerState not valid! \n"));
+        return;
+	}
+	
+	float Speed = PlayerState->GetSnakeSpeed();
 
 	if (NextPosition != FVector::ZeroVector) {
 		FVector Position = GetActorLocation();
@@ -46,7 +55,6 @@ void ASnakeBodyPart::AddChildBodyPart(ASnakeBodyPart* InChildBodyPart) {
 		ChildBodyPart = InChildBodyPart;
 		ChildBodyPart->SetActorLocation(GetActorLocation());
 	}
-		
 }
 
 

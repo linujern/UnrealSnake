@@ -17,6 +17,7 @@ ENGINE_API UClass* Z_Construct_UClass_USphereComponent_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 SNAKEGAME_API UClass* Z_Construct_UClass_ASnakeBodyPart();
 SNAKEGAME_API UClass* Z_Construct_UClass_ASnakeBodyPart_NoRegister();
+SNAKEGAME_API UClass* Z_Construct_UClass_ASnakePlayerState_NoRegister();
 UPackage* Z_Construct_UPackage__Script_SnakeGame();
 // End Cross Module References
 
@@ -162,22 +163,22 @@ struct Z_Construct_UClass_ASnakeBodyPart_Statics
 		{ "ToolTip", "Head of the snake" },
 #endif
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_Speed_MetaData[] = {
-		{ "ModuleRelativePath", "SnakeBodyPart.h" },
-	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ChildBodyPart_MetaData[] = {
 		{ "ModuleRelativePath", "SnakeBodyPart.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_NextPosition_MetaData[] = {
 		{ "ModuleRelativePath", "SnakeBodyPart.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_PlayerState_MetaData[] = {
+		{ "ModuleRelativePath", "SnakeBodyPart.h" },
+	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_SceneComponent;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_CollisionComponent;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_MeshComponent;
-	static const UECodeGen_Private::FFloatPropertyParams NewProp_Speed;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_ChildBodyPart;
 	static const UECodeGen_Private::FStructPropertyParams NewProp_NextPosition;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_PlayerState;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
@@ -193,16 +194,16 @@ struct Z_Construct_UClass_ASnakeBodyPart_Statics
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASnakeBodyPart_Statics::NewProp_SceneComponent = { "SceneComponent", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASnakeBodyPart, SceneComponent), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SceneComponent_MetaData), NewProp_SceneComponent_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASnakeBodyPart_Statics::NewProp_CollisionComponent = { "CollisionComponent", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASnakeBodyPart, CollisionComponent), Z_Construct_UClass_USphereComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CollisionComponent_MetaData), NewProp_CollisionComponent_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASnakeBodyPart_Statics::NewProp_MeshComponent = { "MeshComponent", nullptr, (EPropertyFlags)0x001000000008000d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASnakeBodyPart, MeshComponent), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MeshComponent_MetaData), NewProp_MeshComponent_MetaData) };
-const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ASnakeBodyPart_Statics::NewProp_Speed = { "Speed", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASnakeBodyPart, Speed), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_Speed_MetaData), NewProp_Speed_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASnakeBodyPart_Statics::NewProp_ChildBodyPart = { "ChildBodyPart", nullptr, (EPropertyFlags)0x0020080000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASnakeBodyPart, ChildBodyPart), Z_Construct_UClass_ASnakeBodyPart_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ChildBodyPart_MetaData), NewProp_ChildBodyPart_MetaData) };
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_ASnakeBodyPart_Statics::NewProp_NextPosition = { "NextPosition", nullptr, (EPropertyFlags)0x0020080000000000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASnakeBodyPart, NextPosition), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_NextPosition_MetaData), NewProp_NextPosition_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASnakeBodyPart_Statics::NewProp_PlayerState = { "PlayerState", nullptr, (EPropertyFlags)0x0020080000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASnakeBodyPart, PlayerState), Z_Construct_UClass_ASnakePlayerState_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_PlayerState_MetaData), NewProp_PlayerState_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ASnakeBodyPart_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASnakeBodyPart_Statics::NewProp_SceneComponent,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASnakeBodyPart_Statics::NewProp_CollisionComponent,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASnakeBodyPart_Statics::NewProp_MeshComponent,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASnakeBodyPart_Statics::NewProp_Speed,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASnakeBodyPart_Statics::NewProp_ChildBodyPart,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASnakeBodyPart_Statics::NewProp_NextPosition,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASnakeBodyPart_Statics::NewProp_PlayerState,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ASnakeBodyPart_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_ASnakeBodyPart_Statics::DependentSingletons[])() = {
@@ -245,10 +246,10 @@ ASnakeBodyPart::~ASnakeBodyPart() {}
 struct Z_CompiledInDeferFile_FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakeBodyPart_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ASnakeBodyPart, ASnakeBodyPart::StaticClass, TEXT("ASnakeBodyPart"), &Z_Registration_Info_UClass_ASnakeBodyPart, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASnakeBodyPart), 3049046766U) },
+		{ Z_Construct_UClass_ASnakeBodyPart, ASnakeBodyPart::StaticClass, TEXT("ASnakeBodyPart"), &Z_Registration_Info_UClass_ASnakeBodyPart, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASnakeBodyPart), 2810513724U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakeBodyPart_h_3120147404(TEXT("/Script/SnakeGame"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakeBodyPart_h_3243107500(TEXT("/Script/SnakeGame"),
 	Z_CompiledInDeferFile_FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakeBodyPart_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakeBodyPart_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

@@ -6,9 +6,11 @@
 #include "GameFramework/Pawn.h"
 #include "Components/SphereComponent.h"
 #include "Apple.h"
-#include "SnakeBodyPart.h"
 #include "Definitions.h"
 #include "SnakePawn.generated.h"
+
+class ASnakeBodyPart;
+class ASnakePlayerState;
 
 UCLASS()
 class SNAKEGAME_API ASnakePawn : public APawn {
@@ -37,9 +39,6 @@ public:
 	TSubclassOf<ASnakeBodyPart> BodyPartClass;
 	
 protected:
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (ToolTip  = "Speed of the snake in cm/second."))
-	float Speed = 500.0f;
-
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (ToolTip  = "The next Directions to use."))
 	TArray<ESnakeDirection> DirectionQueue;
 	
@@ -48,6 +47,9 @@ protected:
 
 	UPROPERTY()
 	ASnakeBodyPart* ChildBodyPart = nullptr;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	ASnakePlayerState* SnakePlayerState;
 	
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -83,6 +85,8 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+	virtual void PossessedBy(AController* NewController) override;
 
 	UFUNCTION(BlueprintCallable)
 	void Jump();

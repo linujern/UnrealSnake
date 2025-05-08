@@ -7,6 +7,8 @@
 #include "Components/SphereComponent.h"
 #include "SnakeBodyPart.generated.h"
 
+class ASnakePlayerState;
+
 UCLASS()
 class SNAKEGAME_API ASnakeBodyPart : public AActor
 {
@@ -27,15 +29,15 @@ public:
 	// Head of the snake
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	UStaticMeshComponent* MeshComponent;
-	
-	UPROPERTY()
-	float Speed;
 protected:
 	UPROPERTY()
     ASnakeBodyPart* ChildBodyPart = nullptr;
   
     UPROPERTY()
     FVector NextPosition = FVector::ZeroVector;
+
+	UPROPERTY()
+	ASnakePlayerState* PlayerState = nullptr;
 
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

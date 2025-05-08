@@ -1,6 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "SnakePawn.h"
+#include "SnakePlayerState.h"
+#include "SnakeBodyPart.h"
 
 // Sets default values
 ASnakePawn::ASnakePawn() {
@@ -26,15 +28,26 @@ void ASnakePawn::BeginPlay() {
 	InverseMap = CreateInverseMap();
 }
 
+void ASnakePawn::PossessedBy(AController* NewController) {
+	SnakePlayerState = NewController->GetPlayerState<ASnakePlayerState>();
+
+	if (!IsValid(SnakePlayerState))
+		UE_LOG(LogTemp, Error, TEXT("ASnakePawn::PossessedBy - SnakePlayerState not valid! \n"));
+}
+
 // Called every frame
 void ASnakePawn::Tick(float DeltaTime) {
 	Super::Tick(DeltaTime);
+
+	if(!IsValid(SnakePlayerState))
+		return;
 	
 	UpdateMovement(DeltaTime);
 }
 
 void ASnakePawn::UpdateMovement(float DeltaTime) {
-
+	float Speed = SnakePlayerState->GetSnakeSpeed();
+	
 	float TotalMoveDistance = Speed * DeltaTime;
 	float MoveDistance = TotalMoveDistance;
 
@@ -53,7 +66,6 @@ void ASnakePawn::UpdateMovement(float DeltaTime) {
 		MoveSnake(MoveDistance);
 }
 
-
 void ASnakePawn::MoveSnake(float Distance) {
 	const FVector Position = GetActorLocation();
 
@@ -67,7 +79,6 @@ void ASnakePawn::RotateSnake() {
 	const FRotator Rotation = RotationMap[Direction];
 	MeshComponent->SetWorldRotation(Rotation);
 }
-
 
 void ASnakePawn::UpdateDirection() {
 	if (IsValid(ChildBodyPart))
@@ -98,7 +109,8 @@ void ASnakePawn::QueueNewDirection(ESnakeDirection InDirection) {
 }
 
 void ASnakePawn::Jump() {
-	
+	float dilation = GetWorldSettings()->GetEffectiveTimeDilation();
+	GetWorldSettings()->SetTimeDilation(dilation *= .5f);
 }
 
 void ASnakePawn::OnCollision(AActor* OtherActor) {
@@ -107,25 +119,31 @@ void ASnakePawn::OnCollision(AActor* OtherActor) {
 		OtherActor->Destroy();
 	}
 	else {
-		UE_LOG(LogTemp, Warning, TEXT("COLLISION with \"" + OtherActor->GetName() + "\" at "));
+		UE_LOG(LogTemp, Warning, TEXT("COLLISION with %s at %f seconds. \n"), *OtherActor->GetName(), GetWorld()->GetTimeSeconds());
 	}
 }
 
 void ASnakePawn::AteApple() {
-	ASnakeBodyPart* BodyPart = GetWorld()->SpawnActor<ASnakeBodyPart>(BodyPartClass, GetActorLocation(), GetActorRotation(), FActorSpawnParameters());
-	BodyPart->Speed = Speed;
+	FActorSpawnParameters SpawnParameters;
+	SpawnParameters.Instigator = GetInstigator();
+
+	bool HasChild = IsValid(ChildBodyPart);
+
+	AActor* Target = this;
+	if(HasChild)
+		Target = ChildBodyPart;
 	
-	if(IsValid(ChildBodyPart))
+	ASnakeBodyPart* BodyPart = GetWorld()->SpawnActor<ASnakeBodyPart>(BodyPartClass, Target->GetActorLocation(), GetActorRotation(), SpawnParameters);
+	
+	if(HasChild) 
 		ChildBodyPart->AddChildBodyPart(BodyPart);
-	else
+	else {
 		ChildBodyPart = BodyPart;
+		BodyPart->CollisionComponent->SetCollisionEnabled(ECollisionEnabled::NoCollision);	
+	}
 }
-
-
 
 // Called to bind functionality to input
 void ASnakePawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
-	
 }
-

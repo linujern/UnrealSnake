@@ -1,0 +1,25 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\gitrepos\\unrealsnake\\snakegame\\source\\snakegame\\playmode.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\gitrepos\\unrealsnake\\snakegame\\intermediate\\build\\win64\\x64\\snakegameeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\gitrepos\\unrealsnake\\snakegame\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\snakegame\\definitions.snakegame.h",
+            "c:\\gitrepos\\unrealsnake\\snakegame\\source\\snakegame\\playmode.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\engine\\classes\\gameframework\\gamemode.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\engine\\classes\\gameframework\\gamemodebase.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\engine\\classes\\engine\\serverstatreplicator.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\serverstatreplicator.generated.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gamemodebase.generated.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gamemode.generated.h",
+            "c:\\gitrepos\\unrealsnake\\snakegame\\intermediate\\build\\win64\\unrealeditor\\inc\\snakegame\\uht\\playmode.generated.h",
+            "c:\\gitrepos\\unrealsnake\\snakegame\\source\\snakegame\\snakeplayerstate.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\source\\runtime\\engine\\classes\\gameframework\\playerstate.h",
+            "c:\\program files\\epic games\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\playerstate.generated.h",
+            "c:\\gitrepos\\unrealsnake\\snakegame\\intermediate\\build\\win64\\unrealeditor\\inc\\snakegame\\uht\\snakeplayerstate.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
