@@ -66,6 +66,12 @@
     <ClCompile Include="..\..\Source\SnakeGame\SnakeGame.h">
       <Filter>Source\SnakeGame</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\SnakeGame\SnakeGameState.cpp">
+      <Filter>Source\SnakeGame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\SnakeGame\SnakeGameState.h">
+      <Filter>Source\SnakeGame</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\SnakeGame\SnakePawn.cpp">
       <Filter>Source\SnakeGame</Filter>
     </ClCompile>
