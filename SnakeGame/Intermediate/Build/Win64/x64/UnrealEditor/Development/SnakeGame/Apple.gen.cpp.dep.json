@@ -1,13 +1,13 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "c:\\users\\linus.jernstrom\\documents\\github\\unrealsnake\\snakegame\\intermediate\\build\\win64\\unrealeditor\\inc\\snakegame\\uht\\apple.gen.cpp",
+        "Source": "c:\\gitrepos\\unrealsnake\\snakegame\\intermediate\\build\\win64\\unrealeditor\\inc\\snakegame\\uht\\apple.gen.cpp",
         "ProvidedModule": "",
-        "PCH": "c:\\users\\linus.jernstrom\\documents\\github\\unrealsnake\\snakegame\\intermediate\\build\\win64\\x64\\snakegameeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
+        "PCH": "c:\\gitrepos\\unrealsnake\\snakegame\\intermediate\\build\\win64\\x64\\snakegameeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.h.pch",
         "Includes": [
-            "c:\\users\\linus.jernstrom\\documents\\github\\unrealsnake\\snakegame\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\snakegame\\definitions.snakegame.h",
-            "c:\\users\\linus.jernstrom\\documents\\github\\unrealsnake\\snakegame\\source\\snakegame\\apple.h",
-            "c:\\users\\linus.jernstrom\\documents\\github\\unrealsnake\\snakegame\\intermediate\\build\\win64\\unrealeditor\\inc\\snakegame\\uht\\apple.generated.h"
+            "c:\\gitrepos\\unrealsnake\\snakegame\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\snakegame\\definitions.snakegame.h",
+            "c:\\gitrepos\\unrealsnake\\snakegame\\source\\snakegame\\apple.h",
+            "c:\\gitrepos\\unrealsnake\\snakegame\\intermediate\\build\\win64\\unrealeditor\\inc\\snakegame\\uht\\apple.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

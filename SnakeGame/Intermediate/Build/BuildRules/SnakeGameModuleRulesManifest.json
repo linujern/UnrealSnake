@@ -1,8 +1,8 @@
 {
 	"SourceFiles": [
-		"C:\\Users\\Linus.Jernstrom\\Documents\\GitHub\\UnrealSnake\\SnakeGame\\Source\\SnakeGame\\SnakeGame.Build.cs",
-		"C:\\Users\\Linus.Jernstrom\\Documents\\GitHub\\UnrealSnake\\SnakeGame\\Source\\SnakeGame.Target.cs",
-		"C:\\Users\\Linus.Jernstrom\\Documents\\GitHub\\UnrealSnake\\SnakeGame\\Source\\SnakeGameEditor.Target.cs"
+		"C:\\GitRepos\\UnrealSnake\\SnakeGame\\Source\\SnakeGame\\SnakeGame.Build.cs",
+		"C:\\GitRepos\\UnrealSnake\\SnakeGame\\Source\\SnakeGame.Target.cs",
+		"C:\\GitRepos\\UnrealSnake\\SnakeGame\\Source\\SnakeGameEditor.Target.cs"
 	],
 	"EngineVersion": "5.5.4"
 }
