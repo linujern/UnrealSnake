@@ -7,7 +7,7 @@
 #include "SnakeGameState.generated.h"
 
 UENUM(BlueprintType)
-enum class ESnakePlayMode : uint8 {
+enum class ESnakeGameType : uint8 {
 	Team,
 	Battle
 };
@@ -31,8 +31,8 @@ class SNAKEGAME_API ASnakeGameState : public AGameState
 	GENERATED_BODY()
 private:
 	UPROPERTY()
-	ESnakePlayMode SnakePlayMode = ESnakePlayMode::Team;
+	ESnakeGameType SnakeGameType = ESnakeGameType::Team;
 public:
 	UFUNCTION(BlueprintCallable)
-	FORCEINLINE ESnakePlayMode GetSnakePlayMode() const {return SnakePlayMode;} 
+	FORCEINLINE ESnakeGameType GetSnakeGameType() const {return SnakeGameType;} 
 };
