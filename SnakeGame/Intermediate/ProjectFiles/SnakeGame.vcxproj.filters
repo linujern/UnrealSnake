@@ -39,12 +39,6 @@
     <ClCompile Include="..\..\Source\SnakeGame\Definitions.h">
       <Filter>Source\SnakeGame</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\SnakeGame\GameStateSubsystem.cpp">
-      <Filter>Source\SnakeGame</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\SnakeGame\GameStateSubsystem.h">
-      <Filter>Source\SnakeGame</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\SnakeGame\PlayMode.cpp">
       <Filter>Source\SnakeGame</Filter>
     </ClCompile>
@@ -88,6 +82,12 @@
       <Filter>Source\SnakeGame</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\SnakeGame\SnakeWorld.h">
+      <Filter>Source\SnakeGame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\SnakeGame\StateMachineSubsystem.cpp">
+      <Filter>Source\SnakeGame</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\SnakeGame\StateMachineSubsystem.h">
       <Filter>Source\SnakeGame</Filter>
     </ClCompile>
   </ItemGroup>

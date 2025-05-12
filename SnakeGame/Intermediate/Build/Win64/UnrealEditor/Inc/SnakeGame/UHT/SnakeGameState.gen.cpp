@@ -13,68 +13,176 @@ void EmptyLinkFunctionForGeneratedCodeSnakeGameState() {}
 ENGINE_API UClass* Z_Construct_UClass_AGameState();
 SNAKEGAME_API UClass* Z_Construct_UClass_ASnakeGameState();
 SNAKEGAME_API UClass* Z_Construct_UClass_ASnakeGameState_NoRegister();
-SNAKEGAME_API UEnum* Z_Construct_UEnum_SnakeGame_ESnakePlayMode();
+SNAKEGAME_API UEnum* Z_Construct_UEnum_SnakeGame_ESnakeAgent1();
+SNAKEGAME_API UEnum* Z_Construct_UEnum_SnakeGame_ESnakeAgent2();
+SNAKEGAME_API UEnum* Z_Construct_UEnum_SnakeGame_ESnakeGameType();
 UPackage* Z_Construct_UPackage__Script_SnakeGame();
 // End Cross Module References
 
-// Begin Enum ESnakePlayMode
-static FEnumRegistrationInfo Z_Registration_Info_UEnum_ESnakePlayMode;
-static UEnum* ESnakePlayMode_StaticEnum()
+// Begin Enum ESnakeGameType
+static FEnumRegistrationInfo Z_Registration_Info_UEnum_ESnakeGameType;
+static UEnum* ESnakeGameType_StaticEnum()
 {
-	if (!Z_Registration_Info_UEnum_ESnakePlayMode.OuterSingleton)
+	if (!Z_Registration_Info_UEnum_ESnakeGameType.OuterSingleton)
 	{
-		Z_Registration_Info_UEnum_ESnakePlayMode.OuterSingleton = GetStaticEnum(Z_Construct_UEnum_SnakeGame_ESnakePlayMode, (UObject*)Z_Construct_UPackage__Script_SnakeGame(), TEXT("ESnakePlayMode"));
+		Z_Registration_Info_UEnum_ESnakeGameType.OuterSingleton = GetStaticEnum(Z_Construct_UEnum_SnakeGame_ESnakeGameType, (UObject*)Z_Construct_UPackage__Script_SnakeGame(), TEXT("ESnakeGameType"));
 	}
-	return Z_Registration_Info_UEnum_ESnakePlayMode.OuterSingleton;
+	return Z_Registration_Info_UEnum_ESnakeGameType.OuterSingleton;
 }
-template<> SNAKEGAME_API UEnum* StaticEnum<ESnakePlayMode>()
+template<> SNAKEGAME_API UEnum* StaticEnum<ESnakeGameType>()
 {
-	return ESnakePlayMode_StaticEnum();
+	return ESnakeGameType_StaticEnum();
 }
-struct Z_Construct_UEnum_SnakeGame_ESnakePlayMode_Statics
+struct Z_Construct_UEnum_SnakeGame_ESnakeGameType_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[] = {
-		{ "Battle.Name", "ESnakePlayMode::Battle" },
+		{ "Battle.Name", "ESnakeGameType::Battle" },
 		{ "BlueprintType", "true" },
 		{ "ModuleRelativePath", "SnakeGameState.h" },
-		{ "Team.Name", "ESnakePlayMode::Team" },
+		{ "Team.Name", "ESnakeGameType::Team" },
 	};
 #endif // WITH_METADATA
 	static constexpr UECodeGen_Private::FEnumeratorParam Enumerators[] = {
-		{ "ESnakePlayMode::Team", (int64)ESnakePlayMode::Team },
-		{ "ESnakePlayMode::Battle", (int64)ESnakePlayMode::Battle },
+		{ "ESnakeGameType::Team", (int64)ESnakeGameType::Team },
+		{ "ESnakeGameType::Battle", (int64)ESnakeGameType::Battle },
 	};
 	static const UECodeGen_Private::FEnumParams EnumParams;
 };
-const UECodeGen_Private::FEnumParams Z_Construct_UEnum_SnakeGame_ESnakePlayMode_Statics::EnumParams = {
+const UECodeGen_Private::FEnumParams Z_Construct_UEnum_SnakeGame_ESnakeGameType_Statics::EnumParams = {
 	(UObject*(*)())Z_Construct_UPackage__Script_SnakeGame,
 	nullptr,
-	"ESnakePlayMode",
-	"ESnakePlayMode",
-	Z_Construct_UEnum_SnakeGame_ESnakePlayMode_Statics::Enumerators,
+	"ESnakeGameType",
+	"ESnakeGameType",
+	Z_Construct_UEnum_SnakeGame_ESnakeGameType_Statics::Enumerators,
 	RF_Public|RF_Transient|RF_MarkAsNative,
-	UE_ARRAY_COUNT(Z_Construct_UEnum_SnakeGame_ESnakePlayMode_Statics::Enumerators),
+	UE_ARRAY_COUNT(Z_Construct_UEnum_SnakeGame_ESnakeGameType_Statics::Enumerators),
 	EEnumFlags::None,
 	(uint8)UEnum::ECppForm::EnumClass,
-	METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UEnum_SnakeGame_ESnakePlayMode_Statics::Enum_MetaDataParams), Z_Construct_UEnum_SnakeGame_ESnakePlayMode_Statics::Enum_MetaDataParams)
+	METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UEnum_SnakeGame_ESnakeGameType_Statics::Enum_MetaDataParams), Z_Construct_UEnum_SnakeGame_ESnakeGameType_Statics::Enum_MetaDataParams)
 };
-UEnum* Z_Construct_UEnum_SnakeGame_ESnakePlayMode()
+UEnum* Z_Construct_UEnum_SnakeGame_ESnakeGameType()
 {
-	if (!Z_Registration_Info_UEnum_ESnakePlayMode.InnerSingleton)
+	if (!Z_Registration_Info_UEnum_ESnakeGameType.InnerSingleton)
 	{
-		UECodeGen_Private::ConstructUEnum(Z_Registration_Info_UEnum_ESnakePlayMode.InnerSingleton, Z_Construct_UEnum_SnakeGame_ESnakePlayMode_Statics::EnumParams);
+		UECodeGen_Private::ConstructUEnum(Z_Registration_Info_UEnum_ESnakeGameType.InnerSingleton, Z_Construct_UEnum_SnakeGame_ESnakeGameType_Statics::EnumParams);
 	}
-	return Z_Registration_Info_UEnum_ESnakePlayMode.InnerSingleton;
+	return Z_Registration_Info_UEnum_ESnakeGameType.InnerSingleton;
 }
-// End Enum ESnakePlayMode
+// End Enum ESnakeGameType
 
-// Begin Class ASnakeGameState Function GetSnakePlayMode
-struct Z_Construct_UFunction_ASnakeGameState_GetSnakePlayMode_Statics
+// Begin Enum ESnakeAgent1
+static FEnumRegistrationInfo Z_Registration_Info_UEnum_ESnakeAgent1;
+static UEnum* ESnakeAgent1_StaticEnum()
 {
-	struct SnakeGameState_eventGetSnakePlayMode_Parms
+	if (!Z_Registration_Info_UEnum_ESnakeAgent1.OuterSingleton)
 	{
-		ESnakePlayMode ReturnValue;
+		Z_Registration_Info_UEnum_ESnakeAgent1.OuterSingleton = GetStaticEnum(Z_Construct_UEnum_SnakeGame_ESnakeAgent1, (UObject*)Z_Construct_UPackage__Script_SnakeGame(), TEXT("ESnakeAgent1"));
+	}
+	return Z_Registration_Info_UEnum_ESnakeAgent1.OuterSingleton;
+}
+template<> SNAKEGAME_API UEnum* StaticEnum<ESnakeAgent1>()
+{
+	return ESnakeAgent1_StaticEnum();
+}
+struct Z_Construct_UEnum_SnakeGame_ESnakeAgent1_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[] = {
+		{ "BlueprintType", "true" },
+		{ "Bot.Name", "ESnakeAgent1::Bot" },
+		{ "ModuleRelativePath", "SnakeGameState.h" },
+		{ "Player.Name", "ESnakeAgent1::Player" },
+	};
+#endif // WITH_METADATA
+	static constexpr UECodeGen_Private::FEnumeratorParam Enumerators[] = {
+		{ "ESnakeAgent1::Player", (int64)ESnakeAgent1::Player },
+		{ "ESnakeAgent1::Bot", (int64)ESnakeAgent1::Bot },
+	};
+	static const UECodeGen_Private::FEnumParams EnumParams;
+};
+const UECodeGen_Private::FEnumParams Z_Construct_UEnum_SnakeGame_ESnakeAgent1_Statics::EnumParams = {
+	(UObject*(*)())Z_Construct_UPackage__Script_SnakeGame,
+	nullptr,
+	"ESnakeAgent1",
+	"ESnakeAgent1",
+	Z_Construct_UEnum_SnakeGame_ESnakeAgent1_Statics::Enumerators,
+	RF_Public|RF_Transient|RF_MarkAsNative,
+	UE_ARRAY_COUNT(Z_Construct_UEnum_SnakeGame_ESnakeAgent1_Statics::Enumerators),
+	EEnumFlags::None,
+	(uint8)UEnum::ECppForm::EnumClass,
+	METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UEnum_SnakeGame_ESnakeAgent1_Statics::Enum_MetaDataParams), Z_Construct_UEnum_SnakeGame_ESnakeAgent1_Statics::Enum_MetaDataParams)
+};
+UEnum* Z_Construct_UEnum_SnakeGame_ESnakeAgent1()
+{
+	if (!Z_Registration_Info_UEnum_ESnakeAgent1.InnerSingleton)
+	{
+		UECodeGen_Private::ConstructUEnum(Z_Registration_Info_UEnum_ESnakeAgent1.InnerSingleton, Z_Construct_UEnum_SnakeGame_ESnakeAgent1_Statics::EnumParams);
+	}
+	return Z_Registration_Info_UEnum_ESnakeAgent1.InnerSingleton;
+}
+// End Enum ESnakeAgent1
+
+// Begin Enum ESnakeAgent2
+static FEnumRegistrationInfo Z_Registration_Info_UEnum_ESnakeAgent2;
+static UEnum* ESnakeAgent2_StaticEnum()
+{
+	if (!Z_Registration_Info_UEnum_ESnakeAgent2.OuterSingleton)
+	{
+		Z_Registration_Info_UEnum_ESnakeAgent2.OuterSingleton = GetStaticEnum(Z_Construct_UEnum_SnakeGame_ESnakeAgent2, (UObject*)Z_Construct_UPackage__Script_SnakeGame(), TEXT("ESnakeAgent2"));
+	}
+	return Z_Registration_Info_UEnum_ESnakeAgent2.OuterSingleton;
+}
+template<> SNAKEGAME_API UEnum* StaticEnum<ESnakeAgent2>()
+{
+	return ESnakeAgent2_StaticEnum();
+}
+struct Z_Construct_UEnum_SnakeGame_ESnakeAgent2_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[] = {
+		{ "BlueprintType", "true" },
+		{ "Bot.Name", "ESnakeAgent2::Bot" },
+		{ "ModuleRelativePath", "SnakeGameState.h" },
+		{ "None.Name", "ESnakeAgent2::None" },
+		{ "Player.Name", "ESnakeAgent2::Player" },
+	};
+#endif // WITH_METADATA
+	static constexpr UECodeGen_Private::FEnumeratorParam Enumerators[] = {
+		{ "ESnakeAgent2::None", (int64)ESnakeAgent2::None },
+		{ "ESnakeAgent2::Player", (int64)ESnakeAgent2::Player },
+		{ "ESnakeAgent2::Bot", (int64)ESnakeAgent2::Bot },
+	};
+	static const UECodeGen_Private::FEnumParams EnumParams;
+};
+const UECodeGen_Private::FEnumParams Z_Construct_UEnum_SnakeGame_ESnakeAgent2_Statics::EnumParams = {
+	(UObject*(*)())Z_Construct_UPackage__Script_SnakeGame,
+	nullptr,
+	"ESnakeAgent2",
+	"ESnakeAgent2",
+	Z_Construct_UEnum_SnakeGame_ESnakeAgent2_Statics::Enumerators,
+	RF_Public|RF_Transient|RF_MarkAsNative,
+	UE_ARRAY_COUNT(Z_Construct_UEnum_SnakeGame_ESnakeAgent2_Statics::Enumerators),
+	EEnumFlags::None,
+	(uint8)UEnum::ECppForm::EnumClass,
+	METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UEnum_SnakeGame_ESnakeAgent2_Statics::Enum_MetaDataParams), Z_Construct_UEnum_SnakeGame_ESnakeAgent2_Statics::Enum_MetaDataParams)
+};
+UEnum* Z_Construct_UEnum_SnakeGame_ESnakeAgent2()
+{
+	if (!Z_Registration_Info_UEnum_ESnakeAgent2.InnerSingleton)
+	{
+		UECodeGen_Private::ConstructUEnum(Z_Registration_Info_UEnum_ESnakeAgent2.InnerSingleton, Z_Construct_UEnum_SnakeGame_ESnakeAgent2_Statics::EnumParams);
+	}
+	return Z_Registration_Info_UEnum_ESnakeAgent2.InnerSingleton;
+}
+// End Enum ESnakeAgent2
+
+// Begin Class ASnakeGameState Function GetSnakeGameType
+struct Z_Construct_UFunction_ASnakeGameState_GetSnakeGameType_Statics
+{
+	struct SnakeGameState_eventGetSnakeGameType_Parms
+	{
+		ESnakeGameType ReturnValue;
 	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
@@ -86,39 +194,39 @@ struct Z_Construct_UFunction_ASnakeGameState_GetSnakePlayMode_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static const UECodeGen_Private::FFunctionParams FuncParams;
 };
-const UECodeGen_Private::FBytePropertyParams Z_Construct_UFunction_ASnakeGameState_GetSnakePlayMode_Statics::NewProp_ReturnValue_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_ASnakeGameState_GetSnakePlayMode_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(SnakeGameState_eventGetSnakePlayMode_Parms, ReturnValue), Z_Construct_UEnum_SnakeGame_ESnakePlayMode, METADATA_PARAMS(0, nullptr) }; // 3830163478
-const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ASnakeGameState_GetSnakePlayMode_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ASnakeGameState_GetSnakePlayMode_Statics::NewProp_ReturnValue_Underlying,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ASnakeGameState_GetSnakePlayMode_Statics::NewProp_ReturnValue,
+const UECodeGen_Private::FBytePropertyParams Z_Construct_UFunction_ASnakeGameState_GetSnakeGameType_Statics::NewProp_ReturnValue_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_ASnakeGameState_GetSnakeGameType_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(SnakeGameState_eventGetSnakeGameType_Parms, ReturnValue), Z_Construct_UEnum_SnakeGame_ESnakeGameType, METADATA_PARAMS(0, nullptr) }; // 3711832621
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ASnakeGameState_GetSnakeGameType_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ASnakeGameState_GetSnakeGameType_Statics::NewProp_ReturnValue_Underlying,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ASnakeGameState_GetSnakeGameType_Statics::NewProp_ReturnValue,
 };
-static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ASnakeGameState_GetSnakePlayMode_Statics::PropPointers) < 2048);
-const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ASnakeGameState_GetSnakePlayMode_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ASnakeGameState, nullptr, "GetSnakePlayMode", nullptr, nullptr, Z_Construct_UFunction_ASnakeGameState_GetSnakePlayMode_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ASnakeGameState_GetSnakePlayMode_Statics::PropPointers), sizeof(Z_Construct_UFunction_ASnakeGameState_GetSnakePlayMode_Statics::SnakeGameState_eventGetSnakePlayMode_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x54020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ASnakeGameState_GetSnakePlayMode_Statics::Function_MetaDataParams), Z_Construct_UFunction_ASnakeGameState_GetSnakePlayMode_Statics::Function_MetaDataParams) };
-static_assert(sizeof(Z_Construct_UFunction_ASnakeGameState_GetSnakePlayMode_Statics::SnakeGameState_eventGetSnakePlayMode_Parms) < MAX_uint16);
-UFunction* Z_Construct_UFunction_ASnakeGameState_GetSnakePlayMode()
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_ASnakeGameState_GetSnakeGameType_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ASnakeGameState_GetSnakeGameType_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ASnakeGameState, nullptr, "GetSnakeGameType", nullptr, nullptr, Z_Construct_UFunction_ASnakeGameState_GetSnakeGameType_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ASnakeGameState_GetSnakeGameType_Statics::PropPointers), sizeof(Z_Construct_UFunction_ASnakeGameState_GetSnakeGameType_Statics::SnakeGameState_eventGetSnakeGameType_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x54020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_ASnakeGameState_GetSnakeGameType_Statics::Function_MetaDataParams), Z_Construct_UFunction_ASnakeGameState_GetSnakeGameType_Statics::Function_MetaDataParams) };
+static_assert(sizeof(Z_Construct_UFunction_ASnakeGameState_GetSnakeGameType_Statics::SnakeGameState_eventGetSnakeGameType_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_ASnakeGameState_GetSnakeGameType()
 {
 	static UFunction* ReturnFunction = nullptr;
 	if (!ReturnFunction)
 	{
-		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ASnakeGameState_GetSnakePlayMode_Statics::FuncParams);
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ASnakeGameState_GetSnakeGameType_Statics::FuncParams);
 	}
 	return ReturnFunction;
 }
-DEFINE_FUNCTION(ASnakeGameState::execGetSnakePlayMode)
+DEFINE_FUNCTION(ASnakeGameState::execGetSnakeGameType)
 {
 	P_FINISH;
 	P_NATIVE_BEGIN;
-	*(ESnakePlayMode*)Z_Param__Result=P_THIS->GetSnakePlayMode();
+	*(ESnakeGameType*)Z_Param__Result=P_THIS->GetSnakeGameType();
 	P_NATIVE_END;
 }
-// End Class ASnakeGameState Function GetSnakePlayMode
+// End Class ASnakeGameState Function GetSnakeGameType
 
 // Begin Class ASnakeGameState
 void ASnakeGameState::StaticRegisterNativesASnakeGameState()
 {
 	UClass* Class = ASnakeGameState::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
-		{ "GetSnakePlayMode", &ASnakeGameState::execGetSnakePlayMode },
+		{ "GetSnakeGameType", &ASnakeGameState::execGetSnakeGameType },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 }
@@ -136,16 +244,16 @@ struct Z_Construct_UClass_ASnakeGameState_Statics
 		{ "ModuleRelativePath", "SnakeGameState.h" },
 		{ "ShowCategories", "Input|MouseInput Input|TouchInput" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SnakePlayMode_MetaData[] = {
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SnakeGameType_MetaData[] = {
 		{ "ModuleRelativePath", "SnakeGameState.h" },
 	};
 #endif // WITH_METADATA
-	static const UECodeGen_Private::FBytePropertyParams NewProp_SnakePlayMode_Underlying;
-	static const UECodeGen_Private::FEnumPropertyParams NewProp_SnakePlayMode;
+	static const UECodeGen_Private::FBytePropertyParams NewProp_SnakeGameType_Underlying;
+	static const UECodeGen_Private::FEnumPropertyParams NewProp_SnakeGameType;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_ASnakeGameState_GetSnakePlayMode, "GetSnakePlayMode" }, // 4179887527
+		{ &Z_Construct_UFunction_ASnakeGameState_GetSnakeGameType, "GetSnakeGameType" }, // 2597710269
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -153,11 +261,11 @@ struct Z_Construct_UClass_ASnakeGameState_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
-const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_ASnakeGameState_Statics::NewProp_SnakePlayMode_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
-const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_ASnakeGameState_Statics::NewProp_SnakePlayMode = { "SnakePlayMode", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASnakeGameState, SnakePlayMode), Z_Construct_UEnum_SnakeGame_ESnakePlayMode, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SnakePlayMode_MetaData), NewProp_SnakePlayMode_MetaData) }; // 3830163478
+const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_ASnakeGameState_Statics::NewProp_SnakeGameType_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, nullptr, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_ASnakeGameState_Statics::NewProp_SnakeGameType = { "SnakeGameType", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ASnakeGameState, SnakeGameType), Z_Construct_UEnum_SnakeGame_ESnakeGameType, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SnakeGameType_MetaData), NewProp_SnakeGameType_MetaData) }; // 3711832621
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ASnakeGameState_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASnakeGameState_Statics::NewProp_SnakePlayMode_Underlying,
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASnakeGameState_Statics::NewProp_SnakePlayMode,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASnakeGameState_Statics::NewProp_SnakeGameType_Underlying,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASnakeGameState_Statics::NewProp_SnakeGameType,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ASnakeGameState_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_ASnakeGameState_Statics::DependentSingletons[])() = {
@@ -201,13 +309,15 @@ ASnakeGameState::~ASnakeGameState() {}
 struct Z_CompiledInDeferFile_FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakeGameState_h_Statics
 {
 	static constexpr FEnumRegisterCompiledInInfo EnumInfo[] = {
-		{ ESnakePlayMode_StaticEnum, TEXT("ESnakePlayMode"), &Z_Registration_Info_UEnum_ESnakePlayMode, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3830163478U) },
+		{ ESnakeGameType_StaticEnum, TEXT("ESnakeGameType"), &Z_Registration_Info_UEnum_ESnakeGameType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3711832621U) },
+		{ ESnakeAgent1_StaticEnum, TEXT("ESnakeAgent1"), &Z_Registration_Info_UEnum_ESnakeAgent1, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3358361957U) },
+		{ ESnakeAgent2_StaticEnum, TEXT("ESnakeAgent2"), &Z_Registration_Info_UEnum_ESnakeAgent2, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3148278401U) },
 	};
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ASnakeGameState, ASnakeGameState::StaticClass, TEXT("ASnakeGameState"), &Z_Registration_Info_UClass_ASnakeGameState, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASnakeGameState), 4125932894U) },
+		{ Z_Construct_UClass_ASnakeGameState, ASnakeGameState::StaticClass, TEXT("ASnakeGameState"), &Z_Registration_Info_UClass_ASnakeGameState, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ASnakeGameState), 1673586589U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakeGameState_h_1996266361(TEXT("/Script/SnakeGame"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakeGameState_h_2887839361(TEXT("/Script/SnakeGame"),
 	Z_CompiledInDeferFile_FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakeGameState_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakeGameState_h_Statics::ClassInfo),
 	nullptr, 0,
 	Z_CompiledInDeferFile_FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakeGameState_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakeGameState_h_Statics::EnumInfo));
