@@ -26,13 +26,22 @@ enum class ESnakeAgent2 : uint8 {
 };
 
 UCLASS()
-class SNAKEGAME_API ASnakeGameState : public AGameState
+class SNAKEGAME_API ASnakeGameState : public AGameStateBase
 {
 	GENERATED_BODY()
 private:
 	UPROPERTY()
 	ESnakeGameType SnakeGameType = ESnakeGameType::Team;
+
+	UPROPERTY()
+	ESnakeAgent1 SnakeAgent1 = ESnakeAgent1::Player;
+
+	UPROPERTY()
+	ESnakeAgent2 SnakeAgent2 = ESnakeAgent2::None;
 public:
+	UFUNCTION(BlueprintPure)
+	FORCEINLINE ESnakeGameType GetSnakeGameType() const {return SnakeGameType;}
+
 	UFUNCTION(BlueprintCallable)
-	FORCEINLINE ESnakeGameType GetSnakeGameType() const {return SnakeGameType;} 
+	void SetSnakeGameType(ESnakeGameType InSnakeGameType);
 };

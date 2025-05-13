@@ -16,6 +16,7 @@ enum class ESnakeGameType : uint8;
 #define SNAKEGAME_SnakeGameState_generated_h
 
 #define FID_GitRepos_UnrealSnake_SnakeGame_Source_SnakeGame_SnakeGameState_h_31_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execSetSnakeGameType); \
 	DECLARE_FUNCTION(execGetSnakeGameType);
 
 
@@ -24,7 +25,7 @@ private: \
 	static void StaticRegisterNativesASnakeGameState(); \
 	friend struct Z_Construct_UClass_ASnakeGameState_Statics; \
 public: \
-	DECLARE_CLASS(ASnakeGameState, AGameState, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/SnakeGame"), NO_API) \
+	DECLARE_CLASS(ASnakeGameState, AGameStateBase, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/SnakeGame"), NO_API) \
 	DECLARE_SERIALIZER(ASnakeGameState)
 
 

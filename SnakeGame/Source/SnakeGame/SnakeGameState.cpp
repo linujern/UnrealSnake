@@ -3,3 +3,6 @@
 
 #include "SnakeGameState.h"
 
+void ASnakeGameState::SetSnakeGameType(ESnakeGameType InSnakeGameType) {
+	SnakeGameType = InSnakeGameType;
+}
