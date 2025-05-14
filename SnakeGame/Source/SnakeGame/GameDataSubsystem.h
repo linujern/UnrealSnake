@@ -7,6 +7,20 @@
 #include "SnakeGameState.h"
 #include "GameDataSubsystem.generated.h"
 
+USTRUCT()
+struct FStoredGameData {
+	GENERATED_BODY()
+
+	UPROPERTY()
+	ESnakeGameType SnakeGameType;
+
+	UPROPERTY()
+	int NumPlayers = 1;
+
+	UPROPERTY()
+	int NumBots = 0;
+};
+
 /**
  * 
  */
@@ -20,19 +34,23 @@ private:
 
 	UPROPERTY()
 	int NumBots = 0;
+
+	UPROPERTY()
+	FStoredGameData StoredGameData;
+	
 public:
 	UFUNCTION(BlueprintPure)
 	FORCEINLINE int GetNumPlayers() const { return NumPlayers; }
-
 	UFUNCTION(BlueprintCallable)
-	void SetNumPlayers(int InNumPlayers);
-
+	FORCEINLINE void SetNumPlayers(int InNumPlayers) { NumPlayers = InNumPlayers; }
 	UFUNCTION(BlueprintPure)
 	FORCEINLINE int GetNumBots() const { return NumBots; }
-
 	UFUNCTION(BlueprintCallable)
-	void SetNumBots(int InNumBots);
-
+	FORCEINLINE void SetNumBots(int InNumBots) { NumBots = InNumBots; }
 	UFUNCTION(BlueprintPure)
 	FORCEINLINE int GetNumActors() const { return NumPlayers + NumBots; }
+	
+	UFUNCTION(BlueprintCallable)
+	void SaveGameData();
+
 };
