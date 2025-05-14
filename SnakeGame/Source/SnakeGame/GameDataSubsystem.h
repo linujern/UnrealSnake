@@ -53,4 +53,9 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void SaveGameData();
 
+	UFUNCTION(BlueprintCallable)
+	void LoadGameData();
+
+	UFUNCTION(BlueprintCallable)
+	ASnakeGameState* WorldToGameState(FString CallFunctionName);
 };
