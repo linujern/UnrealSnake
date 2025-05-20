@@ -10,9 +10,31 @@
  * 
  */
 UCLASS()
-class SNAKEGAME_API APlayMode : public AGameMode
-{
+class SNAKEGAME_API APlayMode : public AGameMode {
 	GENERATED_BODY()
+
+protected:
+	UPROPERTY(BlueprintReadOnly)
+	TArray<APlayerController*> PlayerControllers;
+	
 public:
+	virtual void PostLogin(APlayerController* NewPlayer) override;
+	
+	UFUNCTION()
 	void AppleEaten(AController* NewController);
+
+	UFUNCTION(BlueprintCallable)
+	FORCEINLINE bool HasPlayerController(APlayerController* PlayerController) const { return PlayerControllers.Contains(PlayerController); }
+
+	UFUNCTION(BlueprintCallable)
+	FORCEINLINE int CountControllers() const { return PlayerControllers.Num(); }
+	
+	UFUNCTION(BlueprintCallable)
+	APlayerController* GetPlayerController(uint8 Index);
+
+	UFUNCTION(BlueprintCallable)
+	void AddPlayerContoller(APlayerController* PlayerController);
+
+	UFUNCTION(BlueprintCallable)
+	void RemovePlayerContoller(APlayerController* PlayerController);
 };

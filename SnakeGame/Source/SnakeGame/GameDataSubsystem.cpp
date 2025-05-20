@@ -3,13 +3,15 @@
 
 #include "GameDataSubsystem.h"
 
-void UGameDataSubsystem::SaveGameData() {
+void UGameDataSubsystem::StoreGameData() {
 	ASnakeGameState* SnakeGameState = WorldToGameState("SaveGameData");
 
 	if(!IsValid(SnakeGameState))
 		return;
 
-	StoredGameData.SnakeGameType = SnakeGameState->GetSnakeGameType();
+	StoredGameData.GameType = SnakeGameState->GetSnakeGameType();
+	StoredGameData.Agent1 = SnakeGameState->GetSnakeAgent1();
+	StoredGameData.Agent2 = SnakeGameState->GetSnakeAgent2();
 }
 
 void UGameDataSubsystem::LoadGameData() {
@@ -18,7 +20,10 @@ void UGameDataSubsystem::LoadGameData() {
 	if(!IsValid(SnakeGameState))
 		return;
 	
-	SnakeGameState->SetSnakeGameType(StoredGameData.SnakeGameType);
+	SnakeGameState->SetSnakeGameType(StoredGameData.GameType);
+	SnakeGameState->SetSnakeAgent1(StoredGameData.Agent1);
+	SnakeGameState->SetSnakeAgent2(StoredGameData.Agent2);
+	
 }
 
 ASnakeGameState* UGameDataSubsystem::WorldToGameState(FString CallFunctionName) {

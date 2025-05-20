@@ -6,6 +6,15 @@
 #include "GameFramework/PlayerState.h"
 #include "SnakePlayerState.generated.h"
 
+UENUM(BlueprintType)
+enum class ESnakeControllerType : uint8 {
+	KeyboardSolo,
+	Keyboard1,
+	Keyboard2,
+	AI,
+	None
+};
+
 /**
  * 
  */
@@ -14,11 +23,23 @@ class SNAKEGAME_API ASnakePlayerState : public APlayerState
 {
 	GENERATED_BODY()
 
+private:
+	UPROPERTY()
+	ESnakeControllerType SnakeControllerType = ESnakeControllerType::None;
+	
 protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	float SnakeSpeed = 500.0f;
 
+	virtual void BeginPlay() override;
+
 public:
 	UFUNCTION()
-	float GetSnakeSpeed();
+	FORCEINLINE float GetSnakeSpeed() const { return SnakeSpeed; } 
+
+	UFUNCTION(BlueprintCallable)
+	FORCEINLINE ESnakeControllerType GetControllerType() const { return SnakeControllerType; }
+
+	UFUNCTION(BlueprintCallable)
+	FORCEINLINE void SetControllerType(ESnakeControllerType InSnakeControllerType) { SnakeControllerType = InSnakeControllerType; }
 };

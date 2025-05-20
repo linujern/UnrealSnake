@@ -7,18 +7,18 @@
 #include "SnakeGameState.h"
 #include "GameDataSubsystem.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FStoredGameData {
 	GENERATED_BODY()
 
 	UPROPERTY()
-	ESnakeGameType SnakeGameType;
+	ESnakeGameType GameType;
 
 	UPROPERTY()
-	int NumPlayers = 1;
+	ESnakeAgent1 Agent1;
 
 	UPROPERTY()
-	int NumBots = 0;
+	ESnakeAgent2 Agent2;
 };
 
 /**
@@ -30,28 +30,22 @@ class SNAKEGAME_API UGameDataSubsystem : public UGameInstanceSubsystem
 	GENERATED_BODY()
 private:
 	UPROPERTY()
-	int NumPlayers = 1;
-
-	UPROPERTY()
-	int NumBots = 0;
-
-	UPROPERTY()
 	FStoredGameData StoredGameData;
 	
 public:
 	UFUNCTION(BlueprintPure)
-	FORCEINLINE int GetNumPlayers() const { return NumPlayers; }
+	FORCEINLINE ESnakeAgent1 GetAgent1() const { return StoredGameData.Agent1; }
 	UFUNCTION(BlueprintCallable)
-	FORCEINLINE void SetNumPlayers(int InNumPlayers) { NumPlayers = InNumPlayers; }
+	FORCEINLINE void SetAgent1(ESnakeAgent1 InAgent1) { StoredGameData.Agent1 = InAgent1; }
 	UFUNCTION(BlueprintPure)
-	FORCEINLINE int GetNumBots() const { return NumBots; }
+	FORCEINLINE ESnakeAgent2 GetAgent2() const { return StoredGameData.Agent2; }
 	UFUNCTION(BlueprintCallable)
-	FORCEINLINE void SetNumBots(int InNumBots) { NumBots = InNumBots; }
+	FORCEINLINE void SetAgent2(ESnakeAgent2 InAgent2) { StoredGameData.Agent2 = InAgent2; }
 	UFUNCTION(BlueprintPure)
-	FORCEINLINE int GetNumActors() const { return NumPlayers + NumBots; }
+	FORCEINLINE int GetNumAgents() const { return StoredGameData.Agent2 == ESnakeAgent2::None ? 1 : 2; }
 	
 	UFUNCTION(BlueprintCallable)
-	void SaveGameData();
+	void StoreGameData();
 
 	UFUNCTION(BlueprintCallable)
 	void LoadGameData();

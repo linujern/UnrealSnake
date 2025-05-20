@@ -2,9 +2,37 @@
 
 
 #include "PlayMode.h"
-
 #include "SnakePlayerState.h"
+
+void APlayMode::PostLogin(APlayerController* NewPlayer) {
+	UE_LOG(LogTemp, Error, TEXT("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"));
+	
+	Super::PostLogin(NewPlayer);
+
+	AddPlayerContoller(NewPlayer);
+	if(IsValid(GEngine))
+		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow,  FString::Printf(TEXT("Player %s logged in"), *NewPlayer->GetName()));
+}
+
 
 void APlayMode::AppleEaten(AController* NewController) {
 	ASnakePlayerState* SnakePlayerState = NewController->GetPlayerState<ASnakePlayerState>();
 }
+
+APlayerController* APlayMode::GetPlayerController(uint8 Index) {
+	if(Index > PlayerControllers.Num())
+		return nullptr;
+
+	return PlayerControllers[Index];
+}
+
+void APlayMode::AddPlayerContoller(APlayerController* PlayerController) {
+	PlayerControllers.AddUnique(PlayerController);
+}
+
+void APlayMode::RemovePlayerContoller(APlayerController* PlayerController) {
+	if(HasPlayerController(PlayerController))
+		PlayerControllers.Remove(PlayerController);
+}
+
+
