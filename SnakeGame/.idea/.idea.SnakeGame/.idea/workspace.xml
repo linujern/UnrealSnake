@@ -5,54 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad5389d4-b3df-41ef-b8a4-4cc7f50e6d4e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Content/Blueprints/Player/BP_SnakeController.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Input/Actions/IA_KB1Down.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Input/Actions/IA_KB1Jump.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Input/Actions/IA_KB1Left.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Input/Actions/IA_KB1Right.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Input/Actions/IA_KB1Up.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Input/Actions/IA_KB2Down.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Input/Actions/IA_KB2Jump.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Input/Actions/IA_KB2Left.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Input/Actions/IA_KB2Right.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Input/Actions/IA_KB2Up.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Input/IMC_Keyboard1.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Input/IMC_Keyboard2.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/L_Game/6/56/BCMFDKDRPYAAQDI2DVAFW0.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/SnakeGame/SnakeController.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/SnakeGame/SnakeController.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SnakeGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SnakeGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Core/BP_InitGameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Core/BP_InitGameMode.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Core/BP_MenuGameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Core/BP_MenuGameMode.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Blueprints/Core/BP_PlayMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Core/BP_PlayMode.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Core/BP_SnakeGameState.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Core/BP_SnakeGameState.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Player/BP_SnakePawn.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Player/BP_SnakePawn.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_Menu.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_Menu.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Input/Actions/IA_Jump.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Input/Actions/IA_Jump.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Input/Actions/IA_MenuConfirm.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Input/Actions/IA_MenuDown.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Input/Actions/IA_MenuLeft.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Input/Actions/IA_MenuRight.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Input/Actions/IA_MenuUp.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Input/Actions/IA_MoveDown.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Input/Actions/IA_MoveDown.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Input/Actions/IA_MoveLeft.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Input/Actions/IA_MoveLeft.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Input/Actions/IA_MoveRight.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Input/Actions/IA_MoveRight.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Input/Actions/IA_MoveUp.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Input/Actions/IA_MoveUp.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Input/IMC_Menu.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Input/IMC_Menu.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Input/IMC_PlayerOne.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Input/IMC_PlayerTwo.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Input/IMC_SinglePlayer.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Input/IMC_SinglePlayer.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Levels/L_InitLevel.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Levels/L_InitLevel.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/L_Game/6/X2/DMCTDFOYRQ58EESFTYA19P.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/L_Game/6/X2/DMCTDFOYRQ58EESFTYA19P.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SnakeGame/GameDataSubsystem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SnakeGame/GameDataSubsystem.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SnakeGame/GameDataSubsystem.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SnakeGame/GameDataSubsystem.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SnakeGame/PlayMode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SnakeGame/PlayMode.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SnakeGame/PlayMode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SnakeGame/PlayMode.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SnakeGame/SnakeGameState.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SnakeGame/SnakeGameState.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SnakeGame/SnakeGameState.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SnakeGame/SnakeGameState.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SnakeGame/SnakePlayerState.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SnakeGame/SnakePlayerState.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SnakeGame/SnakePlayerState.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SnakeGame/SnakePlayerState.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SnakeGame/SnakeController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SnakeGame/SnakeController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SnakeGame/SnakeController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SnakeGame/SnakeController.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -541,6 +499,8 @@
       <workItem from="1747570114691" duration="414000" />
       <workItem from="1747570552721" duration="17863000" />
       <workItem from="1747744542516" duration="1431000" />
+      <workItem from="1747753914989" duration="212000" />
+      <workItem from="1747823941346" duration="3675000" />
     </task>
     <servers />
   </component>

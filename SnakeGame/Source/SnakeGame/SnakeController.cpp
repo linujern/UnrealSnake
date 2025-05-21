@@ -1,6 +1,5 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-
 #include "SnakeController.h"
 #include "EnhancedInputSubsystems.h"
 #include "EnhancedInputComponent.h"
@@ -9,6 +8,16 @@
 
 void ASnakeController::BeginPlay() {
 	Super::BeginPlay();
+
+	PlayMode = static_cast<APlayMode*>(GetWorld()->GetAuthGameMode());
+	if(!IsValid(PlayMode)) {
+		UE_LOG(LogTemp, Error, TEXT("PlayMode is Invalid!"))
+		return;
+	}
+	if(PlayMode->GetPlayerController(0) != this) {
+		UE_LOG(LogTemp, Log, TEXT("\"%s\" is not player 1"), *GetPawn()->GetName())
+		return;
+	}
 	
 	ASnakePlayerState* SnakePlayerState = GetPlayerState<ASnakePlayerState>();
 	if(!IsValid(SnakePlayerState)) {
@@ -19,19 +28,12 @@ void ASnakeController::BeginPlay() {
 	
 	if(GEngine)
 		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Green, FString::Printf(TEXT("Is Solo is %s"), IsSolo ? TEXT("true") : TEXT("false")));
-	
-	PlayMode = static_cast<APlayMode*>(GetWorld()->GetAuthGameMode());
-	if(!IsValid(PlayMode)) {
-		UE_LOG(LogTemp, Error, TEXT("PlayMode is Invalid!"))
-		return;
-	}
 
 	GetPlayerPawns();
-	
 	InitializeInput();
 }
 
-void ASnakeController::InitializeInput() {
+void ASnakeController::InitializeInput() const {
 	UEnhancedInputLocalPlayerSubsystem* SubSystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(GetLocalPlayer());
 
 	if(!SubSystem) {

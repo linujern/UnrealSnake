@@ -29,7 +29,7 @@ class SNAKEGAME_API ASnakeController : public APlayerController
 
 private:
 	UFUNCTION()
-	void InitializeInput();
+	void InitializeInput() const;
 
 	UFUNCTION()
 	void GetPlayerPawns();

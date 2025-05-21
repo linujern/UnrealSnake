@@ -5,13 +5,10 @@
 #include "SnakePlayerState.h"
 
 void APlayMode::PostLogin(APlayerController* NewPlayer) {
-	UE_LOG(LogTemp, Error, TEXT("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"));
-	
 	Super::PostLogin(NewPlayer);
 
 	AddPlayerContoller(NewPlayer);
-	if(IsValid(GEngine))
-		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow,  FString::Printf(TEXT("Player %s logged in"), *NewPlayer->GetName()));
+	UE_LOG(LogTemp, Log, TEXT("Player %s logged in"), *NewPlayer->GetName());
 }
 
 

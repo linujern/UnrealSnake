@@ -16,6 +16,9 @@ class SNAKEGAME_API APlayMode : public AGameMode {
 protected:
 	UPROPERTY(BlueprintReadOnly)
 	TArray<APlayerController*> PlayerControllers;
+
+	UPROPERTY()
+	int LivingAgentsCount = 0;
 	
 public:
 	virtual void PostLogin(APlayerController* NewPlayer) override;
@@ -37,4 +40,10 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void RemovePlayerContoller(APlayerController* PlayerController);
+
+	UFUNCTION(BlueprintCallable)
+	FORCEINLINE void AddLivingAgent() { LivingAgentsCount++; }
+
+	UFUNCTION(BlueprintCallable)
+	FORCEINLINE int GetLivingAgentCount() const { return LivingAgentsCount; }
 };
