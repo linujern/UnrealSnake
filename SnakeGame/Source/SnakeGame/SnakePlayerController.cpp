@@ -1,12 +1,12 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "SnakeController.h"
+#include "SnakePlayerController.h"
 #include "EnhancedInputSubsystems.h"
 #include "EnhancedInputComponent.h"
 #include "GameDataSubsystem.h"
 #include "SnakePlayerState.h"
 
-void ASnakeController::BeginPlay() {
+void ASnakePlayerController::BeginPlay() {
 	Super::BeginPlay();
 
 	PlayMode = static_cast<APlayMode*>(GetWorld()->GetAuthGameMode());
@@ -15,7 +15,7 @@ void ASnakeController::BeginPlay() {
 		return;
 	}
 	if(PlayMode->GetPlayerController(0) != this) {
-		UE_LOG(LogTemp, Log, TEXT("\"%s\" is not player 1"), *GetPawn()->GetName())
+		UE_LOG(LogTemp, Log, TEXT("\"%s\" is not player 1"), *GetName())
 		return;
 	}
 	
@@ -24,16 +24,18 @@ void ASnakeController::BeginPlay() {
 		UE_LOG(LogTemp, Error, TEXT("SnakePlayerState Invalid!"))
 		return;
 	}
-	IsSolo = GetWorld()->GetGameInstance()->GetSubsystem<UGameDataSubsystem>()->GetAgent2() != ESnakeAgent2::Player;
+	
+	UGameDataSubsystem* GameData = GetWorld()->GetGameInstance()->GetSubsystem<UGameDataSubsystem>();
+	IsSolo = !(GameData->GetAgent1() == ESnakeAgent1::Player && GameData->GetAgent2() == ESnakeAgent2::Player);
 	
 	if(GEngine)
-		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Green, FString::Printf(TEXT("Is Solo is %s"), IsSolo ? TEXT("true") : TEXT("false")));
+		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Green, FString::Printf(TEXT("Is %s"), IsSolo ? TEXT("Solo") : TEXT("Not Solo")));
 
 	GetPlayerPawns();
 	InitializeInput();
 }
 
-void ASnakeController::InitializeInput() const {
+void ASnakePlayerController::InitializeInput() const {
 	UEnhancedInputLocalPlayerSubsystem* SubSystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(GetLocalPlayer());
 
 	if(!SubSystem) {
@@ -49,7 +51,7 @@ void ASnakeController::InitializeInput() const {
 	SubSystem -> AddMappingContext(Keyboard2IMC, 0);
 }
 
-void ASnakeController::GetPlayerPawns() {
+void ASnakePlayerController::GetPlayerPawns() {
 	SnakePlayer1 = GetPawn<ASnakePawn>();
 	if(!IsValid(SnakePlayer1)) {
 		UE_LOG(LogTemp, Error, TEXT("SnakePlayer1 not valid!"))
@@ -71,7 +73,7 @@ void ASnakeController::GetPlayerPawns() {
 		UE_LOG(LogTemp, Error, TEXT("SnakePlayer2 not valid!"))
 }
 
-void ASnakeController::SetupInputComponent() {
+void ASnakePlayerController::SetupInputComponent() {
 	Super::SetupInputComponent();
 
 	UEnhancedInputComponent* Input = Cast<UEnhancedInputComponent>(InputComponent);
@@ -115,15 +117,15 @@ void ASnakeController::SetupInputComponent() {
 }
 
 
-void ASnakeController::BindKeyboardActions(UEnhancedInputComponent* Input, const TMap<UInputAction*, ESnakeDirection>& ActionMappings, KeyboardContext Keyboard) {
+void ASnakePlayerController::BindKeyboardActions(UEnhancedInputComponent* Input, const TMap<UInputAction*, ESnakeDirection>& ActionMappings, KeyboardContext Keyboard) {
 	for (const auto& Entry : ActionMappings) {
 		if (IsValid(Entry.Key)) {
 			
 			if(Keyboard == KeyboardContext::Keyboard1)
-				Input->BindAction(Entry.Key, ETriggerEvent::Triggered, this, &ASnakeController::HandlePlayer1DirectionInput, Entry.Value);
+				Input->BindAction(Entry.Key, ETriggerEvent::Triggered, this, &ASnakePlayerController::HandlePlayer1DirectionInput, Entry.Value);
 			
 			else if(Keyboard == KeyboardContext::Keyboard2)
-				Input->BindAction(Entry.Key, ETriggerEvent::Triggered, this, &ASnakeController::HandlePlayer2DirectionInput, Entry.Value);
+				Input->BindAction(Entry.Key, ETriggerEvent::Triggered, this, &ASnakePlayerController::HandlePlayer2DirectionInput, Entry.Value);
 		}
 		
 		else
@@ -132,9 +134,9 @@ void ASnakeController::BindKeyboardActions(UEnhancedInputComponent* Input, const
 }
 
 // Unified handlers
-void ASnakeController::HandlePlayer1DirectionInput(const FInputActionValue& Value, ESnakeDirection Direction) {
+void ASnakePlayerController::HandlePlayer1DirectionInput(const FInputActionValue& Value, ESnakeDirection Direction) {
 	SnakePlayer1->QueueNewDirection(Direction);
 }
-void ASnakeController::HandlePlayer2DirectionInput(const FInputActionValue& Value, ESnakeDirection Direction) {
+void ASnakePlayerController::HandlePlayer2DirectionInput(const FInputActionValue& Value, ESnakeDirection Direction) {
 	SnakePlayer2->QueueNewDirection(Direction);
 }

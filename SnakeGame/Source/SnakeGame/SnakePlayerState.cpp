@@ -7,12 +7,6 @@
 
 void ASnakePlayerState::BeginPlay() {
 	Super::BeginPlay();
-
-	UWorld* World = GetWorld();
-	UGameDataSubsystem* GameDataSubsystem = World->GetGameInstance()->GetSubsystem<UGameDataSubsystem>();
-	
-	if(GameDataSubsystem->GetAgent2() == ESnakeAgent2::None)
-		SetControllerType(ESnakeControllerType::KeyboardSolo);
 	
 	if(GEngine)
 		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, FString::Printf(TEXT("ControllerType is %x"), GetControllerType()));

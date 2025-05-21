@@ -13,6 +13,10 @@ UCLASS()
 class SNAKEGAME_API APlayMode : public AGameMode {
 	GENERATED_BODY()
 
+private:
+	UPROPERTY()
+	int SpawnIncrementor = 0;
+	
 protected:
 	UPROPERTY(BlueprintReadOnly)
 	TArray<APlayerController*> PlayerControllers;
@@ -22,6 +26,8 @@ protected:
 	
 public:
 	virtual void PostLogin(APlayerController* NewPlayer) override;
+	
+	virtual APlayerController* SpawnPlayerController(ENetRole InRemoteRole, const FString& Options) override; 
 	
 	UFUNCTION()
 	void AppleEaten(AController* NewController);
@@ -46,4 +52,7 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	FORCEINLINE int GetLivingAgentCount() const { return LivingAgentsCount; }
+
+	UFUNCTION()
+	ESnakeControllerType DetermineControllerTypeForNextPlayer();
 };

@@ -7,7 +7,7 @@
 #include "SnakePawn.h"
 #include "PlayMode.h"
 #include "GameFramework/PlayerController.h"
-#include "SnakeController.generated.h"
+#include "SnakePlayerController.generated.h"
 
 class UInputMappingContext;
 class UInputAction;
@@ -23,7 +23,7 @@ enum class KeyboardContext {
  * 
  */
 UCLASS()
-class SNAKEGAME_API ASnakeController : public APlayerController
+class SNAKEGAME_API ASnakePlayerController : public APlayerController
 {
 	GENERATED_BODY()
 
@@ -49,8 +49,6 @@ private:
 protected:
 	virtual void BeginPlay() override;
 	virtual void SetupInputComponent() override;
-
-	
 
 	UPROPERTY(EditDefaultsOnly, Category = "Input")
 	TObjectPtr<UInputMappingContext> Keyboard1IMC;
