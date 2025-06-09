@@ -33,6 +33,9 @@ protected:
 
 	virtual void BeginPlay() override;
 
+	UPROPERTY()
+	int Points = 0;
+
 public:
 	UFUNCTION()
 	FORCEINLINE float GetSnakeSpeed() const { return SnakeSpeed; } 
@@ -42,4 +45,10 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	FORCEINLINE void SetControllerType(ESnakeControllerType InSnakeControllerType) { SnakeControllerType = InSnakeControllerType; }
+
+	UFUNCTION()
+	FORCEINLINE void AddPoints(int InPoints) { Points += InPoints; }
+
+	UFUNCTION()
+	FORCEINLINE int GetPoints() const { return Points; }
 };

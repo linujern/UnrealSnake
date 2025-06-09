@@ -3,6 +3,7 @@
 
 #include "SnakeBodyPart.h"
 #include "SnakePlayerState.h"
+#include "SnakeWorld.h"
 
 // Sets default values
 ASnakeBodyPart::ASnakeBodyPart() {
@@ -61,7 +62,18 @@ void ASnakeBodyPart::AddChildBodyPart(ASnakeBodyPart* InChildBodyPart) {
 void ASnakeBodyPart::SetNextPosition(const FVector& InPosition) {
 	if (IsValid(ChildBodyPart))
 		ChildBodyPart->SetNextPosition(NextPosition);
-	
+
+	UpdateOccupancy();
 	NextPosition = InPosition;
 }
 
+void ASnakeBodyPart::UpdateOccupancy() {
+	ASnakeWorld* SnakeWorld = ASnakeWorld::Get(GetWorld());
+	FIntPoint NewGridCoords = SnakeWorld->GetGridCoordsFromWorldLocation(GetActorLocation());
+
+	if (NewGridCoords != OccupiedSpace) {
+		SnakeWorld->UnmarkTileAsOccupied(OccupiedSpace);	// Unmark old
+		SnakeWorld->MarkTileAsOccupied(NewGridCoords);		// Mark new
+		OccupiedSpace = NewGridCoords;						// Update cache
+	}
+}

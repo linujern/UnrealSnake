@@ -79,6 +79,14 @@ private:
 	UPROPERTY(meta = (ToolTip = "Finds the opposite Direction of an ESnakeDirection."))
 	TMap<ESnakeDirection, ESnakeDirection> InverseMap;
 
+	UPROPERTY()
+	FIntPoint OccupiedSpace;
+
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE(FCenterTileSignature);
+
+	UFUNCTION()
+	void UpdateOccupancy();
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -89,11 +97,11 @@ public:
 	virtual void PossessedBy(AController* NewController) override;
 
 	UFUNCTION(BlueprintCallable)
-	void Jump();
-
-	UFUNCTION(BlueprintCallable)
 	void QueueNewDirection(ESnakeDirection InDirection);
 
 	UFUNCTION(blueprintCallable)
 	void OnCollision(AActor* OtherActor);
+
+	UPROPERTY(BlueprintAssignable)
+	FCenterTileSignature OnCenterTileReached;
 };

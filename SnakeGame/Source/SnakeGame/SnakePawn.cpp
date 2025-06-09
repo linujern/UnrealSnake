@@ -1,8 +1,12 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "SnakePawn.h"
+
+#include "PlayMode.h"
 #include "SnakePlayerState.h"
 #include "SnakeBodyPart.h"
+#include "SnakeWorld.h"
+#include "Kismet/GameplayStatics.h"
 
 // Sets default values
 ASnakePawn::ASnakePawn() {
@@ -55,6 +59,8 @@ void ASnakePawn::UpdateMovement(float DeltaTime) {
 		MoveDistance = TileSize - MovedTileDistance;
 
 		MoveSnake(MoveDistance);
+		OnCenterTileReached.Broadcast();
+		UpdateOccupancy();
 		UpdateDirection();
 		
 		if (IsValid(ChildBodyPart))
@@ -108,11 +114,6 @@ void ASnakePawn::QueueNewDirection(ESnakeDirection InDirection) {
 	DirectionQueue.Add(InDirection);
 }
 
-void ASnakePawn::Jump() {
-	float dilation = GetWorldSettings()->GetEffectiveTimeDilation();
-	GetWorldSettings()->SetTimeDilation(dilation *= .5f);
-}
-
 void ASnakePawn::OnCollision(AActor* OtherActor) {
 	if (Cast<AApple>(OtherActor) != nullptr) {
 		AteApple();
@@ -123,7 +124,21 @@ void ASnakePawn::OnCollision(AActor* OtherActor) {
 	}
 }
 
+void ASnakePawn::UpdateOccupancy() {
+	ASnakeWorld* SnakeWorld = ASnakeWorld::Get(GetWorld());
+	FIntPoint NewGridCoords = SnakeWorld->GetGridCoordsFromWorldLocation(GetActorLocation());
+
+	if (NewGridCoords != OccupiedSpace) {
+		SnakeWorld->UnmarkTileAsOccupied(OccupiedSpace);	// Unmark old
+		SnakeWorld->MarkTileAsOccupied(NewGridCoords);		// Mark new
+		OccupiedSpace = NewGridCoords;						// Update cache
+	}
+}
+
 void ASnakePawn::AteApple() {
+	const APlayMode* PlayMode = Cast<APlayMode>(UGameplayStatics::GetGameMode(GetWorld()));
+	PlayMode->AppleEaten(GetController());
+	
 	FActorSpawnParameters SpawnParameters;
 	SpawnParameters.Instigator = GetInstigator();
 

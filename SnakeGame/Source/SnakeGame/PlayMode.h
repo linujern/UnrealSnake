@@ -30,7 +30,7 @@ public:
 	virtual APlayerController* SpawnPlayerController(ENetRole InRemoteRole, const FString& Options) override; 
 	
 	UFUNCTION()
-	void AppleEaten(AController* NewController);
+	void AppleEaten(AController* NewController) const;
 
 	UFUNCTION(BlueprintCallable)
 	FORCEINLINE bool HasPlayerController(APlayerController* PlayerController) const { return PlayerControllers.Contains(PlayerController); }
@@ -42,10 +42,10 @@ public:
 	APlayerController* GetPlayerController(uint8 Index);
 
 	UFUNCTION(BlueprintCallable)
-	void AddPlayerContoller(APlayerController* PlayerController);
+	void AddPlayerController(APlayerController* PlayerController);
 
 	UFUNCTION(BlueprintCallable)
-	void RemovePlayerContoller(APlayerController* PlayerController);
+	void RemovePlayerController(APlayerController* PlayerController);
 
 	UFUNCTION(BlueprintCallable)
 	FORCEINLINE void AddLivingAgent() { LivingAgentsCount++; }

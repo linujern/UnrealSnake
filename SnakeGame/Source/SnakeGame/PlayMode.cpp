@@ -9,7 +9,7 @@
 void APlayMode::PostLogin(APlayerController* NewPlayer) {
 	Super::PostLogin(NewPlayer);
 
-	AddPlayerContoller(NewPlayer);
+	AddPlayerController(NewPlayer);
 	AddLivingAgent();
 	
 	UE_LOG(LogTemp, Log, TEXT("Player %s logged in"), *NewPlayer->GetName());
@@ -58,8 +58,11 @@ ESnakeControllerType APlayMode::DetermineControllerTypeForNextPlayer() {
 	}
 }
 
-void APlayMode::AppleEaten(AController* NewController) {
+void APlayMode::AppleEaten(AController* NewController) const {
+	UE_LOG(LogTemp, Log, TEXT("Apple!"))
 	ASnakePlayerState* SnakePlayerState = NewController->GetPlayerState<ASnakePlayerState>();
+	SnakePlayerState->AddPoints(1);
+	ASnakeWorld::Get(GetWorld())->SpawnApple();
 }
 
 APlayerController* APlayMode::GetPlayerController(uint8 Index) {
@@ -69,11 +72,11 @@ APlayerController* APlayMode::GetPlayerController(uint8 Index) {
 	return PlayerControllers[Index];
 }
 
-void APlayMode::AddPlayerContoller(APlayerController* PlayerController) {
+void APlayMode::AddPlayerController(APlayerController* PlayerController) {
 	PlayerControllers.AddUnique(PlayerController);
 }
 
-void APlayMode::RemovePlayerContoller(APlayerController* PlayerController) {
+void APlayMode::RemovePlayerController(APlayerController* PlayerController) {
 	if(HasPlayerController(PlayerController))
 		PlayerControllers.Remove(PlayerController);
 }
