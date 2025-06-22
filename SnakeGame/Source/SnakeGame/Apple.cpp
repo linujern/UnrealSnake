@@ -2,26 +2,43 @@
 
 
 #include "Apple.h"
+#include "NiagaraFunctionLibrary.h"
+#include "Kismet/GameplayStatics.h"
 
 // Sets default values
 AApple::AApple()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
+	PrimaryActorTick.bCanEverTick = false;
 
 }
 
-// Called when the game starts or when spawned
-void AApple::BeginPlay()
-{
-	Super::BeginPlay();
+void AApple::NotifyActorBeginOverlap(AActor* OtherActor) {
+	Super::NotifyActorBeginOverlap(OtherActor);
+
+	SpawnVfx();
+	SpawnSfx();
+}
+
+
+void AApple::SpawnVfx() const {
+	if(!IsValid(VFX)) {
+		UE_LOG(LogVisual, Warning, TEXT("APPLE: VFX is not set"));
+		return;
+	}
 	
+	UNiagaraFunctionLibrary::SpawnSystemAtLocation(
+		GetWorld(), VFX, GetActorLocation(), FRotator(0, 0, 0),
+		FVector(1, 1, 1), true, true, ENCPoolMethod::AutoRelease, true);
 }
 
-// Called every frame
-void AApple::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-
+void AApple::SpawnSfx() const {
+	if (!IsValid(SFX))
+	{
+		UE_LOG(LogAudioDebug, Warning, TEXT("APPLE: SFX is not set"));
+		return;
+	}
+	UGameplayStatics::PlaySoundAtLocation(
+		GetWorld(), SFX, GetActorLocation(), FRotator::ZeroRotator,
+		1.f, 1.f, 0);
 }
-

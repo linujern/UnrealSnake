@@ -2,8 +2,6 @@
 
 
 #include "SnakeBotController.h"
-
-#include "AssetTypeCategories.h"
 #include "SnakePawn.h"
 #include "SnakeWorld.h"
 
@@ -42,11 +40,18 @@ void ASnakeBotController::HandleReachedCenterTile() {
 		return;
 
 	const FVector StartLocation = SnakePawn->GetActorLocation();
-	const FVector TargetLocation = TargetTile()->WorldLocation;
+	FTile* Target = TargetTile();
+	if (!Target)
+	{
+		UE_LOG(LogTemp, Error, TEXT("TargetTile returned nullptr!"));
+		return;
+	}
+	const FVector TargetLocation = Target->WorldLocation;
 
 	// Run A*
 	TArray<FTile*> CurrentPath = FindPath(StartLocation, TargetLocation);
-
+	UE_LOG(LogTemp, Log, TEXT("Current path length: %d"), CurrentPath.Num())
+	
 	// If we found a path, move
 	if (CurrentPath.Num() >= 2) {
 		FTile* CurrentTile = CurrentPath[0];
@@ -55,26 +60,26 @@ void ASnakeBotController::HandleReachedCenterTile() {
 		ESnakeDirection MoveDir = SnakeWorld->GetDirectionBetweenTiles(CurrentTile, NextTile);
 		SnakePawn->QueueNewDirection(MoveDir);
 	}
-	
 }
 
 FTile* ASnakeBotController::TargetTile() const {
-	FTile* StartTile = SnakeWorld->GetTileFromWorldPoint(SnakePawn->GetActorLocation());
+	FVector SnakePos = SnakePawn->GetActorLocation();
 	TArray<FTile*> AppleTiles = SnakeWorld->GetAppleTiles();
 
 	FTile* ClosestAppleTile = nullptr;
 	float ClosestDistance = TNumericLimits<float>::Max();
-
+	
 	for (FTile* AppleTile : AppleTiles) {
 		if (!AppleTile || AppleTile->bIsWall)
 			continue;
 
-		float Distance = FVector::Dist(AppleTile->WorldLocation, StartTile->WorldLocation);
+		const float Distance = FVector::Distance(AppleTile->WorldLocation, SnakePos);
 		if (Distance < ClosestDistance) {
 			ClosestDistance = Distance;
 			ClosestAppleTile = AppleTile;
 		}
 	}
+	UE_LOG(LogTemp, Log, TEXT("ClosestDistance: %f"), ClosestAppleTile->WorldLocation.Length())
 	return ClosestAppleTile;
 }
 

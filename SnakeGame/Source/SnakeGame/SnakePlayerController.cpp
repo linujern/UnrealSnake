@@ -5,6 +5,7 @@
 #include "EnhancedInputComponent.h"
 #include "GameDataSubsystem.h"
 #include "SnakePlayerState.h"
+#include "StateMachineSubsystem.h"
 
 void ASnakePlayerController::BeginPlay() {
 	Super::BeginPlay();
@@ -95,6 +96,7 @@ void ASnakePlayerController::SetupInputComponent() {
 		{KB1RightAction, ESnakeDirection::Right}
 	};
 	BindKeyboardActions(Input, KB1Mappings, KeyboardContext::Keyboard1);
+	Input->BindAction(KB1PauseAction, ETriggerEvent::Triggered, this, &ASnakePlayerController::HandlePause);
 
 	// Set up keyboard 2 actions
 	if(!IsValid(KB2LeftAction) || !IsValid(KB2UpAction) || !IsValid(KB2DownAction) || !IsValid(KB2RightAction)) {
@@ -114,6 +116,7 @@ void ASnakePlayerController::SetupInputComponent() {
 	
 	else
 		BindKeyboardActions(Input, KB2Mappings, KeyboardContext::Keyboard2);
+	Input->BindAction(KB2PauseAction, ETriggerEvent::Triggered, this, &ASnakePlayerController::HandlePause);
 }
 
 
@@ -139,4 +142,8 @@ void ASnakePlayerController::HandlePlayer1DirectionInput(const FInputActionValue
 }
 void ASnakePlayerController::HandlePlayer2DirectionInput(const FInputActionValue& Value, ESnakeDirection Direction) {
 	SnakePlayer2->QueueNewDirection(Direction);
+}
+
+void ASnakePlayerController::HandlePause(const FInputActionValue& Value) {
+	GetGameInstance()->GetSubsystem<UStateMachineSubsystem>()->ChangeState(EGlobalState::Pause);
 }

@@ -18,6 +18,9 @@ enum class ESnakeControllerType : uint8 {
 /**
  * 
  */
+
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPointsUpdated, int, InPoints);
+
 UCLASS()
 class SNAKEGAME_API ASnakePlayerState : public APlayerState
 {
@@ -26,7 +29,7 @@ class SNAKEGAME_API ASnakePlayerState : public APlayerState
 private:
 	UPROPERTY()
 	ESnakeControllerType SnakeControllerType = ESnakeControllerType::None;
-	
+
 protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	float SnakeSpeed = 500.0f;
@@ -37,6 +40,9 @@ protected:
 	int Points = 0;
 
 public:
+	UPROPERTY(BlueprintAssignable)
+	FOnPointsUpdated OnPointsUpdated;
+	
 	UFUNCTION()
 	FORCEINLINE float GetSnakeSpeed() const { return SnakeSpeed; } 
 
@@ -46,9 +52,13 @@ public:
 	UFUNCTION(BlueprintCallable)
 	FORCEINLINE void SetControllerType(ESnakeControllerType InSnakeControllerType) { SnakeControllerType = InSnakeControllerType; }
 
-	UFUNCTION()
-	FORCEINLINE void AddPoints(int InPoints) { Points += InPoints; }
+	UFUNCTION(BlueprintCallable)
+	FORCEINLINE void AddPoints(int InPoints) { Points += InPoints; OnPointsUpdated.Broadcast(Points); }
 
-	UFUNCTION()
+	UFUNCTION(BlueprintCallable)
+	FORCEINLINE void ResetPoints() { Points = 0; OnPointsUpdated.Broadcast(Points); }
+
+	UFUNCTION(BlueprintCallable)
 	FORCEINLINE int GetPoints() const { return Points; }
+	
 };

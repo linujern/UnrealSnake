@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Definitions.h"
+#include "InputActionValue.h"
 #include "SnakePawn.h"
 #include "PlayMode.h"
 #include "GameFramework/PlayerController.h"
@@ -65,6 +66,8 @@ protected:
 	TObjectPtr<UInputAction> KB1UpAction;
 	UPROPERTY(EditDefaultsOnly, Category = "Input")
 	TObjectPtr<UInputAction> KB1RightAction;
+	UPROPERTY(EditDefaultsOnly, Category = "Input")
+	TObjectPtr<UInputAction> KB1PauseAction;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Input")
 	TObjectPtr<UInputAction> KB2LeftAction;
@@ -74,6 +77,8 @@ protected:
 	TObjectPtr<UInputAction> KB2UpAction;
 	UPROPERTY(EditDefaultsOnly, Category = "Input")
 	TObjectPtr<UInputAction> KB2RightAction;
+	UPROPERTY(EditDefaultsOnly, Category = "Input")
+	TObjectPtr<UInputAction> KB2PauseAction;
 
 	UFUNCTION()
 	void BindKeyboardActions(UEnhancedInputComponent* Input, const TMap<UInputAction*, ESnakeDirection>& ActionMappings, KeyboardContext Keyboard);
@@ -81,4 +86,7 @@ protected:
 	void HandlePlayer1DirectionInput(const FInputActionValue& Value, ESnakeDirection Direction);
 	UFUNCTION()
 	void HandlePlayer2DirectionInput(const FInputActionValue& Value, ESnakeDirection Direction);
+
+	UFUNCTION()
+	void HandlePause(const FInputActionValue& Value);
 };

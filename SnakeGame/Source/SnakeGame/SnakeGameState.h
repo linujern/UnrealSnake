@@ -35,6 +35,15 @@ private:
 	ESnakeAgent1 SnakeAgent1 = ESnakeAgent1::Player;
 	UPROPERTY()
 	ESnakeAgent2 SnakeAgent2 = ESnakeAgent2::None;
+
+	UPROPERTY()
+	int ActiveApples = 1;
+
+	UPROPERTY()
+	int ApplesPerLevel = 1;
+
+	UPROPERTY()
+	int LevelNumber = 1;
 public:
 	UFUNCTION(BlueprintPure)
 	FORCEINLINE ESnakeGameType GetSnakeGameType() const {return SnakeGameType;}
@@ -48,5 +57,19 @@ public:
 	FORCEINLINE ESnakeAgent2 GetSnakeAgent2() const {return SnakeAgent2;}
 	UFUNCTION(BlueprintCallable)
 	FORCEINLINE void SetSnakeAgent2(ESnakeAgent2 InSnakeAgent) { SnakeAgent2 = InSnakeAgent; }
+	
+	UFUNCTION(BlueprintCallable)
+	FORCEINLINE int GetActiveApples() { return ActiveApples; }
+	UFUNCTION(BlueprintCallable)
+	FORCEINLINE void SetActiveApples(int InInt) { ActiveApples = InInt; }
+	UFUNCTION(BlueprintCallable)
+	FORCEINLINE int GetApplesPerLevel() { return ApplesPerLevel; }
+	UFUNCTION(BlueprintCallable)
+	FORCEINLINE void SetApplesPerLevel(int InInt) { ApplesPerLevel = InInt; }
+
+	UFUNCTION(BlueprintCallable)
+	FORCEINLINE int GetLevelNumber() { return LevelNumber; }
+	UFUNCTION(BlueprintCallable)
+	FORCEINLINE void SetLevelNumber(int InInt) { LevelNumber = InInt; }
 	
 };

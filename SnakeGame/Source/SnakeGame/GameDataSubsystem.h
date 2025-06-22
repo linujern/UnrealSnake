@@ -19,6 +19,15 @@ struct FStoredGameData {
 
 	UPROPERTY()
 	ESnakeAgent2 Agent2;
+
+	UPROPERTY()
+	int ActiveApples = 1;
+
+	UPROPERTY()
+	int ApplesPerLevel = 1;
+
+	UPROPERTY()
+	int LevelNumber = 1;
 };
 
 /**

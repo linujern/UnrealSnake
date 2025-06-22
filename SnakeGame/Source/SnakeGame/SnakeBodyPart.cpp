@@ -2,6 +2,8 @@
 
 
 #include "SnakeBodyPart.h"
+
+#include "AudioDevice.h"
 #include "SnakePlayerState.h"
 #include "SnakeWorld.h"
 
@@ -55,6 +57,7 @@ void ASnakeBodyPart::AddChildBodyPart(ASnakeBodyPart* InChildBodyPart) {
 	else {
 		ChildBodyPart = InChildBodyPart;
 		ChildBodyPart->SetActorLocation(GetActorLocation());
+		ChildBodyPart->CollisionComponent->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
 	}
 }
 
@@ -76,4 +79,10 @@ void ASnakeBodyPart::UpdateOccupancy() {
 		SnakeWorld->MarkTileAsOccupied(NewGridCoords);		// Mark new
 		OccupiedSpace = NewGridCoords;						// Update cache
 	}
+}
+
+void ASnakeBodyPart::Death() {
+	if (IsValid(ChildBodyPart))
+		ChildBodyPart->Death();
+	Destroy();
 }

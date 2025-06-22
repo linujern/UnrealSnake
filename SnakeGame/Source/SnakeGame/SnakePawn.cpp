@@ -5,6 +5,7 @@
 #include "PlayMode.h"
 #include "SnakePlayerState.h"
 #include "SnakeBodyPart.h"
+#include "SnakePlayerController.h"
 #include "SnakeWorld.h"
 #include "Kismet/GameplayStatics.h"
 
@@ -119,8 +120,10 @@ void ASnakePawn::OnCollision(AActor* OtherActor) {
 		AteApple();
 		OtherActor->Destroy();
 	}
+	else if(OtherActor == this) {}
 	else {
 		UE_LOG(LogTemp, Warning, TEXT("COLLISION with %s at %f seconds. \n"), *OtherActor->GetName(), GetWorld()->GetTimeSeconds());
+		Death();
 	}
 }
 
@@ -136,8 +139,8 @@ void ASnakePawn::UpdateOccupancy() {
 }
 
 void ASnakePawn::AteApple() {
-	const APlayMode* PlayMode = Cast<APlayMode>(UGameplayStatics::GetGameMode(GetWorld()));
-	PlayMode->AppleEaten(GetController());
+	APlayMode* PlayMode = Cast<APlayMode>(UGameplayStatics::GetGameMode(GetWorld()));
+	PlayMode->AppleEaten(GetController<ASnakePlayerController>());
 	
 	FActorSpawnParameters SpawnParameters;
 	SpawnParameters.Instigator = GetInstigator();
@@ -157,6 +160,15 @@ void ASnakePawn::AteApple() {
 		BodyPart->CollisionComponent->SetCollisionEnabled(ECollisionEnabled::NoCollision);	
 	}
 }
+
+void ASnakePawn::Death() {
+	OnDeath.Broadcast(this);
+	if(IsValid(ChildBodyPart))
+		ChildBodyPart->Death();
+	Cast<APlayMode>(UGameplayStatics::GetGameMode(GetWorld()))->RemoveLivingAgent();
+	Destroy();
+}
+
 
 // Called to bind functionality to input
 void ASnakePawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) {

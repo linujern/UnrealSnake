@@ -3,6 +3,8 @@
 #include "SnakeWorld.h"
 #include "Apple.h"
 #include "EngineUtils.h"
+#include "SnakeGameState.h"
+#include "Kismet/GameplayStatics.h"
 
 ASnakeWorld* ASnakeWorld::Get(UWorld* World) {
 	if (!IsValid(World)) return nullptr;
@@ -10,7 +12,6 @@ ASnakeWorld* ASnakeWorld::Get(UWorld* World) {
 	for (TActorIterator<ASnakeWorld> It(World); It; ++It) {
 		return *It; // Return the first (and only) SnakeWorld
 	}
-
 	return nullptr;
 }
 
@@ -31,12 +32,30 @@ ASnakeWorld::ASnakeWorld() {
 }
 
 void ASnakeWorld::OnConstruction(const FTransform& Transform) {
+	MakeWorld(1);
+}
+
+void ASnakeWorld::BeginPlay() {
+	Super::BeginPlay();
+
+	ASnakeGameState* SnakeGameState = Cast<ASnakeGameState>(UGameplayStatics::GetGameState(GetWorld()));
+
+	MakeWorld(SnakeGameState->GetLevelNumber());
+	
+	int Limit = SnakeGameState->GetActiveApples();
+	for (int i = 0; i < Limit; i++)
+		SpawnApple();
+}
+
+
+void ASnakeWorld::MakeWorld(int LevelNumber) {
 	InstancedWalls->ClearInstances();
 	InstancedFloors->ClearInstances();
 	WorldTiles.Empty();
 
 	TArray<FString> Lines;
-	FString FilePath = FPaths::ProjectDir() + TEXT("Data/Level1.txt");
+	FString Num = FString::FromInt(LevelNumber);
+	FString FilePath = FPaths::ProjectDir() + TEXT("Data/Level") + Num + TEXT(".txt");
 
 	if (FFileHelper::LoadFileToStringArray(Lines, *FilePath)) {
 		int32 NumRows = Lines.Num();
@@ -75,6 +94,7 @@ void ASnakeWorld::OnConstruction(const FTransform& Transform) {
 		}
 	}
 }
+
 
 void ASnakeWorld::SpawnApple() {
 	TArray<FTile*> ValidTiles;
@@ -175,6 +195,7 @@ TArray<FTile*> ASnakeWorld::GetAppleTiles() {
 		if (Apple) {
 			const FVector WorldLoc = Apple->GetActorLocation();
 			if (FTile* Tile = GetTileFromWorldPoint(WorldLoc)) {
+				Tile->WorldLocation = Apple->GetActorLocation();
 				Result.Add(Tile);
 			}
 		}

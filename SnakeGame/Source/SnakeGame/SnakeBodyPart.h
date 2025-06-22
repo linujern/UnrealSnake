@@ -55,6 +55,9 @@ public:
 
 	UFUNCTION()
 	void AddChildBodyPart(ASnakeBodyPart* InChildBodyPart);
+
+	UFUNCTION()
+	void Death();
 	
 	UFUNCTION()
 	void SetNextPosition(const FVector& InPosition);

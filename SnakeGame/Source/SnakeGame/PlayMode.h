@@ -3,12 +3,16 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "SnakePlayerState.h"
 #include "GameFramework/GameMode.h"
 #include "PlayMode.generated.h"
+
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnPointsReached);
 
 /**
  * 
  */
+
 UCLASS()
 class SNAKEGAME_API APlayMode : public AGameMode {
 	GENERATED_BODY()
@@ -22,15 +26,27 @@ protected:
 	TArray<APlayerController*> PlayerControllers;
 
 	UPROPERTY()
+	int Agent1Points = 0;
+
+	UPROPERTY()
+	int Agent2Points = 0;
+	
+	UPROPERTY()
 	int LivingAgentsCount = 0;
+
+	UFUNCTION()
+	void GameOver() const;
 	
 public:
 	virtual void PostLogin(APlayerController* NewPlayer) override;
 	
 	virtual APlayerController* SpawnPlayerController(ENetRole InRemoteRole, const FString& Options) override; 
+
+	UPROPERTY(BlueprintAssignable)
+	FOnPointsReached OnPointsReached;
 	
-	UFUNCTION()
-	void AppleEaten(AController* NewController) const;
+	UFUNCTION(BlueprintCallable)
+	void AppleEaten(APlayerController* NewController);
 
 	UFUNCTION(BlueprintCallable)
 	FORCEINLINE bool HasPlayerController(APlayerController* PlayerController) const { return PlayerControllers.Contains(PlayerController); }
@@ -51,8 +67,17 @@ public:
 	FORCEINLINE void AddLivingAgent() { LivingAgentsCount++; }
 
 	UFUNCTION(BlueprintCallable)
+	FORCEINLINE void RemoveLivingAgent() { LivingAgentsCount--; if (LivingAgentsCount <= 0) GameOver(); }
+
+	UFUNCTION(BlueprintCallable)
 	FORCEINLINE int GetLivingAgentCount() const { return LivingAgentsCount; }
 
 	UFUNCTION()
-	ESnakeControllerType DetermineControllerTypeForNextPlayer();
+	ESnakeControllerType DetermineControllerTypeForNextPlayer() const;
+
+	UFUNCTION(BlueprintCallable)
+	FORCEINLINE int GetAgent1Points() { return Agent1Points; }
+
+	UFUNCTION(BlueprintCallable)
+	FORCEINLINE int GetAgent2Points() { return Agent2Points; }
 };

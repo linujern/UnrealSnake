@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "NiagaraSystem.h"
 #include "Apple.generated.h"
 
 UCLASS()
@@ -15,12 +16,16 @@ public:
 	// Sets default values for this actor's properties
 	AApple();
 
+	virtual void NotifyActorBeginOverlap(AActor* OtherActor) override;
 protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TObjectPtr<UNiagaraSystem> VFX;
 
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TObjectPtr<USoundBase> SFX;
 
+	UFUNCTION(BlueprintCallable)
+	void SpawnVfx() const;
+	UFUNCTION(BlueprintCallable)
+	void SpawnSfx() const;
 };

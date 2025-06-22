@@ -9,9 +9,12 @@ void UGameDataSubsystem::StoreGameData() {
 	if(!IsValid(SnakeGameState))
 		return;
 
-	StoredGameData.GameType = SnakeGameState->GetSnakeGameType();
-	StoredGameData.Agent1 = SnakeGameState->GetSnakeAgent1();
-	StoredGameData.Agent2 = SnakeGameState->GetSnakeAgent2();
+	StoredGameData.GameType			= SnakeGameState->GetSnakeGameType();
+	StoredGameData.Agent1			= SnakeGameState->GetSnakeAgent1();
+	StoredGameData.Agent2			= SnakeGameState->GetSnakeAgent2();
+	StoredGameData.ActiveApples		= SnakeGameState->GetActiveApples();
+	StoredGameData.ApplesPerLevel	= SnakeGameState->GetApplesPerLevel();
+	StoredGameData.LevelNumber		= SnakeGameState->GetLevelNumber();
 }
 
 void UGameDataSubsystem::LoadGameData() {
@@ -20,10 +23,12 @@ void UGameDataSubsystem::LoadGameData() {
 	if(!IsValid(SnakeGameState))
 		return;
 	
-	SnakeGameState->SetSnakeGameType(StoredGameData.GameType);
-	SnakeGameState->SetSnakeAgent1(StoredGameData.Agent1);
-	SnakeGameState->SetSnakeAgent2(StoredGameData.Agent2);
-	
+	SnakeGameState->SetSnakeGameType	(StoredGameData.GameType);
+	SnakeGameState->SetSnakeAgent1		(StoredGameData.Agent1);
+	SnakeGameState->SetSnakeAgent2		(StoredGameData.Agent2);
+	SnakeGameState->SetActiveApples		(StoredGameData.ActiveApples);
+	SnakeGameState->SetApplesPerLevel	(StoredGameData.ApplesPerLevel);
+	SnakeGameState->SetLevelNumber		(StoredGameData.LevelNumber);
 }
 
 ASnakeGameState* UGameDataSubsystem::WorldToGameState(FString CallFunctionName) {

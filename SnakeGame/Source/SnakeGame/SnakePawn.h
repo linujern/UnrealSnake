@@ -12,6 +12,8 @@
 class ASnakeBodyPart;
 class ASnakePlayerState;
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnDeath, APawn*, DeadPawn);
+
 UCLASS()
 class SNAKEGAME_API ASnakePawn : public APawn {
 	GENERATED_BODY()
@@ -19,6 +21,9 @@ class SNAKEGAME_API ASnakePawn : public APawn {
 public:
 	// Sets default values for this pawn's properties
 	ASnakePawn();
+
+	UPROPERTY(BlueprintAssignable)
+	FOnDeath OnDeath;
 
 	// Root of the blueprint
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
@@ -86,6 +91,9 @@ private:
 
 	UFUNCTION()
 	void UpdateOccupancy();
+
+	UFUNCTION()
+	void Death();
 
 public:	
 	// Called every frame
