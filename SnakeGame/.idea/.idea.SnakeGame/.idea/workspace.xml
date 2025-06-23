@@ -12,60 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="036560cb-5170-4673-85fe-4be8eab14820" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Content/Art/VFX/NS_AppleEaten.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Blueprints/UI/BP_GameHUD.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_GameScore.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_MenuIncrementor.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_Outro.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_Pause.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Input/Actions/IA_KB1Pause.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Input/Actions/IA_KB2Pause.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/L_Game/8/87/KQ2DS7WX7G2QS3B8FQQDUS.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SnakeGame/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SnakeGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SnakeGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Core/BP_InitGameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Core/BP_InitGameMode.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Core/BP_MenuGameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Core/BP_MenuGameMode.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Core/BP_PlayMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Core/BP_PlayMode.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Core/BP_SnakePlayerState.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Core/BP_SnakePlayerState.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Player/BP_SnakeBodyPart.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Player/BP_SnakeBodyPart.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Player/BP_SnakePawn.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Player/BP_SnakePawn.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Player/BP_SnakePlayerController.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Player/BP_SnakePlayerController.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_Menu.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_Menu.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_MenuButton.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/UI/WBP_MenuButton.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/World/BP_Apple.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/World/BP_Apple.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Input/IMC_Keyboard1.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Input/IMC_Keyboard1.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Input/IMC_Keyboard2.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Input/IMC_Keyboard2.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Levels/L_InitLevel.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Levels/L_InitLevel.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/L_Game/0/5Y/5EAO5EBHWGJAY3GOU6BR8E.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/L_Game/2/R0/UHAVY1HZE83E64DL9Y9CG7.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/L_Game/4/08/AGM7PSALPHE8WIINIDBUFZ.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/L_Game/4/08/AGM7PSALPHE8WIINIDBUFZ.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/L_Game/6/56/BCMFDKDRPYAAQDI2DVAFW0.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/L_Game/6/AP/D8KL572X9UGL3UXJAVMXWA.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/L_Game/7/YP/6NSFOXU1ONOYOOFXE9TDBI.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/L_Game/B/KC/KTIL4VRNJDS7SCY33YYI1F.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/Levels/L_Game/B/KN/6HCU0N3JP5GA14DQR8HK00.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Level3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Level3.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/Level4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Level4.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SnakeGame.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/SnakeGame.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SnakeGame/Apple.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SnakeGame/Apple.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SnakeGame/Apple.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SnakeGame/Apple.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SnakeGame/GameDataSubsystem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SnakeGame/GameDataSubsystem.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SnakeGame/GameDataSubsystem.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SnakeGame/GameDataSubsystem.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SnakeGame/PlayMode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SnakeGame/PlayMode.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SnakeGame/PlayMode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SnakeGame/PlayMode.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SnakeGame/SnakeBodyPart.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SnakeGame/SnakeBodyPart.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SnakeGame/SnakeBodyPart.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SnakeGame/SnakeBodyPart.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SnakeGame/SnakeBotController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SnakeGame/SnakeBotController.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SnakeGame/SnakeGame.Build.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SnakeGame/SnakeGame.Build.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SnakeGame/SnakeGameState.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SnakeGame/SnakeGameState.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SnakeGame/SnakePawn.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SnakeGame/SnakePawn.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SnakeGame/SnakePawn.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SnakeGame/SnakePawn.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SnakeGame/SnakePlayerController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SnakeGame/SnakePlayerController.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SnakeGame/SnakePlayerController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SnakeGame/SnakePlayerController.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SnakeGame/SnakePlayerState.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SnakeGame/SnakePlayerState.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SnakeGame/SnakeWorld.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SnakeGame/SnakeWorld.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SnakeGame/SnakeWorld.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SnakeGame/SnakeWorld.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/global.json" beforeDir="false" afterPath="$PROJECT_DIR$/global.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -561,7 +508,8 @@
       <workItem from="1750091819560" duration="4096000" />
       <workItem from="1750173890103" duration="6195000" />
       <workItem from="1750349742653" duration="1092000" />
-      <workItem from="1750588892271" duration="10837000" />
+      <workItem from="1750588892271" duration="11450000" />
+      <workItem from="1750682191731" duration="4000" />
     </task>
     <servers />
   </component>
